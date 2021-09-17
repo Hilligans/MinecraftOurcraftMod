@@ -1,0 +1,17 @@
+{
+  "model":{
+    "boundingBox": [0,0,0,1,0.125,1],
+    "modelName":"powered_rail.json",
+    "blockStates":{
+      "default":{
+        "rotX":0,
+        "rotY":0
+      }
+    }
+  },
+  "properties":{
+    "canWalkThrough":true,
+    "transparent":true,
+    "alwaysRender": true
+  }
+}

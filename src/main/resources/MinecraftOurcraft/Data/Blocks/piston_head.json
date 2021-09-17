@@ -1,0 +1,16 @@
+{
+  "model":{
+    "modelName":"piston_head.json",
+    "blockStates":{
+      "default":{
+        "rotX":0,
+        "rotY":0
+      }
+    }
+  },
+  "properties":{
+    "canWalkThrough":false,
+    "transparent":true,
+    "alwaysRender": true
+  }
+}

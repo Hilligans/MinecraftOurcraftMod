@@ -92,11 +92,13 @@ public class SChunkDataPacket extends PacketBase {
                     for (x = 0; x < 16; x++) {
                         for (int y = 0; y < 16; y++) {
                             for (int z = 0; z < 16; z++) {
+                                int id;
                                 if (blockPalette == null) {
-                                    chunk.setBlockState(x, y + a * 16, z, BlockManager.blocks.getOrDefault(blocks[y << 8 | z << 4 | x], Blocks.BEDROCK).getDefaultState());
+                                    id = blocks[y << 8 | z << 4 | x];
                                 } else {
-                                    chunk.setBlockState(x, y + a * 16, z, BlockManager.blocks.getOrDefault(blockPalette.vals[blocks[y << 8 | z << 4 | x]], Blocks.BEDROCK).getDefaultState());
+                                    id = blockPalette.vals[blocks[y << 8 | z << 4 | x]];
                                 }
+                                chunk.setBlockState(x, y + a * 16, z, BlockManager.blocks.getOrDefault(id, Blocks.BEDROCK).getStateWithData((short) BlockManager.blockStates.getOrDefault(id,0)));
                             }
                         }
                     }

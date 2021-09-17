@@ -1,0 +1,9 @@
+{
+  "model":{
+    "modelName":"block.txt"
+  },
+  "properties":{
+    "transparent":false,
+    "alwaysRender": true
+  }
+}

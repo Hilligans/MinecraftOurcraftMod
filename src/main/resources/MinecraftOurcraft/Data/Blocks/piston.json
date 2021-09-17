@@ -1,0 +1,64 @@
+{
+  "model":{
+    "modelName":"block.txt",
+    "blockStates":{
+      "default":{
+        "rotX":0,
+        "rotY":0
+      },
+      "1": {
+        "rotX":1,
+        "rotY":0
+      },
+      "2": {
+        "rotX":1,
+        "rotY":0
+      },
+      "3": {
+        "rotX":1,
+        "rotY":0
+      },
+      "4": {
+        "rotX":1,
+        "rotY":0
+      },
+      "5": {
+        "rotX":1,
+        "rotY":0
+      },
+      "6": {
+        "rotX":1,
+        "rotY":0
+      },
+      "7": {
+        "rotX":1,
+        "rotY":0
+      },
+      "8": {
+        "rotX":1,
+        "rotY":0
+      },
+      "9": {
+        "rotX":1,
+        "rotY":0
+      },
+      "10": {
+        "rotX":1,
+        "rotY":0
+      },
+      "11": {
+        "rotX":1,
+        "rotY":0
+      },
+      "12": {
+        "rotX":1,
+        "rotY":0
+      }
+    }
+  },
+
+  "properties":{
+    "blockStateByteCount": 2
+  }
+
+}

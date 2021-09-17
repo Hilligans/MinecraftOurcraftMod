@@ -4,7 +4,6 @@
   },
   "grass_block": {
     "textures": [
-      "dirt.png",
       "grass_block_side.png",
       "grass_block_side.png",
       "grass_block_side.png",
@@ -17,166 +16,173 @@
     "textures": [ "dirt.png" ]
   },
   "podzol": {
-    "textures": [ "podzol.png" ]
+    "textures": [
+      "podzol_side.png",
+      "podzol_side.png",
+      "podzol_side.png",
+      "podzol_side.png",
+      "dirt.png",
+      "podzol_top.png"
+    ]
   },
   "warped_slab": {
-    "textures": [ "warped_slab.png" ],
+    "textures": [ "warped_planks.png" ],
     "data": "Blocks/slab.json"
   },
   "jungle_slab": {
-    "textures": [ "jungle_slab.png" ],
+    "textures": [ "jungle_planks.png" ],
     "data": "Blocks/slab.json"
   },
   "cut_sandstone_slab": {
-    "textures": [ "cut_sandstone_slab.png" ],
+    "textures": [ "cut_sandstone.png" ],
     "data": "Blocks/slab.json"
   },
   "cut_red_sandstone_slab": {
-    "textures": [ "cut_red_sandstone_slab.png" ],
+    "textures": [ "cut_red_sandstone.png" ],
     "data": "Blocks/slab.json"
   },
   "oak_slab": {
-    "textures": [ "oak_slab.png" ],
+    "textures": [ "oak_planks.png" ],
     "data": "Blocks/slab.json"
   },
   "spruce_slab": {
-    "textures": [ "spruce_slab.png" ],
+    "textures": [ "spruce_planks.png" ],
     "data": "Blocks/slab.json"
   },
   "polished_blackstone_slab": {
-    "textures": [ "polished_blackstone_slab.png" ],
+    "textures": [ "polished_blackstone.png" ],
     "data": "Blocks/slab.json"
   },
   "sandstone_slab": {
-    "textures": [ "sandstone_slab.png" ],
+    "textures": [ "sandstone.png" ],
     "data": "Blocks/slab.json"
   },
   "smooth_stone_slab": {
-    "textures": [ "smooth_stone_slab.png" ],
+    "textures": [ "smooth_stone.png" ],
     "data": "Blocks/slab.json"
   },
   "end_stone_brick_slab": {
-    "textures": [ "end_stone_brick_slab.png" ],
+    "textures": [ "end_stone_bricks.png" ],
     "data": "Blocks/slab.json"
   },
   "dark_oak_slab": {
-    "textures": [ "dark_oak_slab.png" ],
+    "textures": [ "dark_oak_planks.png" ],
     "data": "Blocks/slab.json"
   },
   "prismarine_brick_slab": {
-    "textures": [ "prismarine_brick_slab.png" ],
+    "textures": [ "prismarine_bricks.png" ],
     "data": "Blocks/slab.json"
   },
   "cobblestone_slab": {
-    "textures": [ "cobblestone_slab.png" ],
+    "textures": [ "cobblestone.png" ],
     "data": "Blocks/slab.json"
   },
   "nether_brick_slab": {
-    "textures": [ "nether_brick_slab.png" ],
+    "textures": [ "nether_bricks.png" ],
     "data": "Blocks/slab.json"
   },
   "crimson_slab": {
-    "textures": [ "crimson_slab.png" ],
+    "textures": [ "crimson_planks.png" ],
     "data": "Blocks/slab.json"
   },
   "red_sandstone_slab": {
-    "textures": [ "red_sandstone_slab.png" ],
+    "textures": [ "red_sandstone.png" ],
     "data": "Blocks/slab.json"
   },
   "brick_slab": {
-    "textures": [ "brick_slab.png" ],
+    "textures": [ "bricks.png" ],
     "data": "Blocks/slab.json"
   },
   "red_nether_brick_slab": {
-    "textures": [ "red_nether_brick_slab.png" ],
+    "textures": [ "red_nether_bricks.png" ],
     "data": "Blocks/slab.json"
   },
   "granite_slab": {
-    "textures": [ "granite_slab.png" ],
+    "textures": [ "granite.png" ],
     "data": "Blocks/slab.json"
   },
   "polished_granite_slab": {
-    "textures": [ "polished_granite_slab.png" ],
+    "textures": [ "polished_granite.png" ],
     "data": "Blocks/slab.json"
   },
   "prismarine_slab": {
-    "textures": [ "prismarine_slab.png" ],
+    "textures": [ "prismarine.png" ],
     "data": "Blocks/slab.json"
   },
   "mossy_cobblestone_slab": {
-    "textures": [ "mossy_cobblestone_slab.png" ],
+    "textures": [ "mossy_cobblestone.png" ],
     "data": "Blocks/slab.json"
   },
   "smooth_red_sandstone_slab": {
-    "textures": [ "smooth_red_sandstone_slab.png" ],
+    "textures": [ "red_sandstone_top.png" ],
     "data": "Blocks/slab.json"
   },
   "purpur_slab": {
-    "textures": [ "purpur_slab.png" ],
+    "textures": [ "purpur_block.png" ],
     "data": "Blocks/slab.json"
   },
   "smooth_quartz_slab": {
-    "textures": [ "smooth_quartz_slab.png" ],
+    "textures": [ "quartz_block_bottom.png" ],
     "data": "Blocks/slab.json"
   },
   "quartz_slab": {
-    "textures": [ "quartz_slab.png" ],
+    "textures": [ "quartz_block_side.png" ],
     "data": "Blocks/slab.json"
   },
   "dark_prismarine_slab": {
-    "textures": [ "dark_prismarine_slab.png" ],
+    "textures": [ "dark_prismarine.png" ],
     "data": "Blocks/slab.json"
   },
   "andesite_slab": {
-    "textures": [ "andesite_slab.png" ],
+    "textures": [ "andesite.png" ],
     "data": "Blocks/slab.json"
   },
   "polished_andesite_slab": {
-    "textures": [ "polished_andesite_slab.png" ],
+    "textures": [ "polished_andesite.png" ],
     "data": "Blocks/slab.json"
   },
   "diorite_slab": {
-    "textures": [ "diorite_slab.png" ],
+    "textures": [ "diorite.png" ],
     "data": "Blocks/slab.json"
   },
   "acacia_slab": {
-    "textures": [ "acacia_slab.png" ],
+    "textures": [ "acacia_planks.png" ],
     "data": "Blocks/slab.json"
   },
   "polished_diorite_slab": {
-    "textures": [ "polished_diorite_slab.png" ],
+    "textures": [ "polished_diorite.png" ],
     "data": "Blocks/slab.json"
   },
   "mossy_stone_brick_slab": {
-    "textures": [ "mossy_stone_brick_slab.png" ],
+    "textures": [ "mossy_stone_bricks.png" ],
     "data": "Blocks/slab.json"
   },
   "petrified_oak_slab": {
-    "textures": [ "petrified_oak_slab.png" ],
+    "textures": [ "oak_planks.png" ],
     "data": "Blocks/slab.json"
   },
   "stone_brick_slab": {
-    "textures": [ "stone_brick_slab.png" ],
+    "textures": [ "stone_bricks.png" ],
     "data": "Blocks/slab.json"
   },
   "stone_slab": {
-    "textures": [ "stone_slab.png" ],
+    "textures": [ "stone.png" ],
     "data": "Blocks/slab.json"
   },
   "blackstone_slab": {
-    "textures": [ "blackstone_slab.png" ],
+    "textures": [ "blackstone.png" ],
     "data": "Blocks/slab.json"
   },
   "polished_blackstone_brick_slab": {
-    "textures": [ "polished_blackstone_brick_slab.png" ],
+    "textures": [ "polished_blackstone_bricks.png" ],
     "data": "Blocks/slab.json"
   },
   "smooth_sandstone_slab": {
-    "textures": [ "smooth_sandstone_slab.png" ],
+    "textures": [ "sandstone_top.png" ],
     "data": "Blocks/slab.json"
   },
   "birch_slab": {
-    "textures": [ "birch_slab.png" ],
+    "textures": [ "birch_planks.png" ],
     "data": "Blocks/slab.json"
   },
   "gilded_blackstone": {
@@ -210,7 +216,7 @@
     "textures": [ "brain_coral_block.png" ]
   },
   "snow_block": {
-    "textures": [ "snow_block.png" ]
+    "textures": [ "snow.png" ]
   },
   "green_stained_glass": {
     "textures": [ "green_stained_glass.png" ]
@@ -267,7 +273,7 @@
     "textures": [ "cracked_nether_bricks.png" ]
   },
   "infested_mossy_stone_bricks": {
-    "textures": [ "infested_mossy_stone_bricks.png" ]
+    "textures": [ "mossy_stone_bricks.png" ]
   },
   "lapis_ore": {
     "textures": [ "lapis_ore.png" ]
@@ -372,7 +378,7 @@
     "textures": [ "spawner.png" ]
   },
   "infested_cracked_stone_bricks": {
-    "textures": [ "infested_cracked_stone_bricks.png" ]
+    "textures": [ "cracked_stone_bricks.png" ]
   },
   "dead_bubble_coral_block": {
     "textures": [ "dead_bubble_coral_block.png" ]
@@ -399,7 +405,7 @@
     "textures": [ "purple_terracotta.png" ]
   },
   "smooth_red_sandstone": {
-    "textures": [ "smooth_red_sandstone.png" ]
+    "textures": [ "red_sandstone_top.png" ]
   },
   "prismarine": {
     "textures": [ "prismarine.png" ]
@@ -459,7 +465,7 @@
     "textures": [ "red_wool.png" ]
   },
   "smooth_quartz": {
-    "textures": [ "smooth_quartz.png" ]
+    "textures": [ "quartz_block_bottom.png" ]
   },
   "polished_blackstone": {
     "textures": [ "polished_blackstone.png" ]
@@ -492,7 +498,7 @@
     "textures": [ "nether_quartz_ore.png" ]
   },
   "infested_chiseled_stone_bricks": {
-    "textures": [ "infested_chiseled_stone_bricks.png" ]
+    "textures": [ "chiseled_stone_bricks.png" ]
   },
   "light_gray_concrete": {
     "textures": [ "light_gray_concrete.png" ]
@@ -620,7 +626,7 @@
     "textures": [ "lime_wool.png" ]
   },
   "smooth_sandstone": {
-    "textures": [ "smooth_sandstone.png" ]
+    "textures": [ "sandstone_top.png" ]
   },
   "cobblestone": {
     "textures": [ "cobblestone.png" ]
@@ -686,7 +692,7 @@
     "textures": [ "granite.png" ]
   },
   "magma_block": {
-    "textures": [ "magma_block.png" ]
+    "textures": [ "magma.png" ]
   },
   "orange_stained_glass": {
     "textures": [ "orange_stained_glass.png" ]
@@ -698,10 +704,10 @@
     "textures": [ "magenta_concrete_powder.png" ]
   },
   "infested_cobblestone": {
-    "textures": [ "infested_cobblestone.png" ]
+    "textures": [ "cobblestone.png" ]
   },
   "infested_stone_bricks": {
-    "textures": [ "infested_stone_bricks.png" ]
+    "textures": [ "stone_bricks.png" ]
   },
   "orange_concrete": {
     "textures": [ "orange_concrete.png" ]
@@ -719,6 +725,115 @@
     "textures": [ "quartz_block_side.png" ]
   },
   "bookshelf": {
-    "textures": [ "bookshelf.png","bookshelf.png","bookshelf.png","bookshelf.png","bookshelf.png","oak_planks.png","oak_planks.png" ]
-  }
+    "textures": ["bookshelf.png","bookshelf.png","bookshelf.png","bookshelf.png","oak_planks.png","oak_planks.png" ]
+  },
+  "redstone_wire": {
+    "textures": [ "redstone_dust_dot.png"],
+    "data": "Blocks/redstone.json"
+  },
+
+  "repeater": {
+    "textures": [ "repeater.png"],
+    "data": "Blocks/repeater.json"
+  },
+
+  "comparator": {
+    "textures": [ "comparator.png"],
+    "data": "Blocks/repeater.json"
+  },
+  "powered_rail": {
+    "textures": [ "powered_rail.png"],
+    "data": "Blocks/powered_rail.json"
+  },
+  "redstone_lamp": {
+    "textures": ["redstone_lamp.png"]
+  },
+
+  "piston": {
+    "textures": ["piston_side.png","piston_side.png","piston_side.png","piston_side.png","piston_bottom.png","piston_top.png"],
+    "data": "Blocks/piston.json"
+  },
+  "sticky_piston": {
+    "textures": ["piston_side.png","piston_side.png","piston_side.png","piston_side.png","piston_bottom.png","piston_top_sticky.png"],
+    "data": "Blocks/piston.json"
+  },
+  "piston_head": {
+    "textures": ["piston_side.png","piston_side.png","piston_side.png","piston_side.png","piston_bottom.png","piston_top_sticky.png"],
+    "data": "Blocks/piston_head.json"
+  },
+  "crafting_table": {
+    "textures": ["crafting_table_front.png","crafting_table_side.png","crafting_table_front.png","crafting_table_side.png","oak_planks.png","crafting_table_top.png"]
+  },
+  "dispenser": {
+    "textures": ["furnace_top.png","furnace_top.png","furnace_top.png","furnace_top.png","furnace_top.png","dispenser_front_vertical.png"]
+  },
+  "furnace": {
+    "textures": ["furnace_front.png","furnace_side.png","furnace_side.png","furnace_side.png","furnace_top.png","furnace_top.png"]
+  },
+  "slime_block": {
+    "textures": ["slime_block.png"],
+    "data": "Blocks/transparent_block.json"
+  },
+  "honey_block": {
+    "textures": ["honey_block_side.png"],
+    "data": "Blocks/transparent_block.json"
+  },
+  "water": {
+    "textures": ["water_still.png"],
+    "data": "Blocks/transparent_block.json"
+  },
+
+  "shulker_box": {
+    "textures": ["shulker_side.png","shulker_side.png","shulker_side.png","shulker_side.png","shulker_bottom.png","shulker_box.png"]
+  },
+  "red_shulker_box": {
+    "textures": ["shulker_side.png","shulker_side.png","shulker_side.png","shulker_side.png","shulker_bottom.png","shulker_box.png"]
+  },
+  "orange_shulker_box": {
+    "textures": ["shulker_side.png","shulker_side.png","shulker_side.png","shulker_side.png","shulker_bottom.png","shulker_box.png"]
+  },
+  "yellow_shulker_box": {
+    "textures": ["shulker_side.png","shulker_side.png","shulker_side.png","shulker_side.png","shulker_bottom.png","shulker_box.png"]
+  },
+  "lime_shulker_box": {
+    "textures": ["shulker_side.png","shulker_side.png","shulker_side.png","shulker_side.png","shulker_bottom.png","shulker_box.png"]
+  },
+  "green_shulker_box": {
+    "textures": ["shulker_side.png","shulker_side.png","shulker_side.png","shulker_side.png","shulker_bottom.png","shulker_box.png"]
+  },
+  "cyan_shulker_box": {
+    "textures": ["shulker_side.png","shulker_side.png","shulker_side.png","shulker_side.png","shulker_bottom.png","shulker_box.png"]
+  },
+  "light_blue_shulker_box": {
+    "textures": ["shulker_side.png","shulker_side.png","shulker_side.png","shulker_side.png","shulker_bottom.png","shulker_box.png"]
+  },
+  "blue_shulker_box": {
+    "textures": ["shulker_side.png","shulker_side.png","shulker_side.png","shulker_side.png","shulker_bottom.png","shulker_box.png"]
+  },
+  "purple_shulker_box": {
+    "textures": ["shulker_side.png","shulker_side.png","shulker_side.png","shulker_side.png","shulker_bottom.png","shulker_box.png"]
+  },
+  "magenta_shulker_box": {
+    "textures": ["shulker_side.png","shulker_side.png","shulker_side.png","shulker_side.png","shulker_bottom.png","shulker_box.png"]
+  },
+  "pink_shulker_box": {
+    "textures": ["shulker_side.png","shulker_side.png","shulker_side.png","shulker_side.png","shulker_bottom.png","shulker_box.png"]
+  },
+  "white_shulker_box": {
+    "textures": ["shulker_side.png","shulker_side.png","shulker_side.png","shulker_side.png","shulker_bottom.png","shulker_box.png"]
+  },
+  "light_gray_shulker_box": {
+    "textures": ["shulker_side.png","shulker_side.png","shulker_side.png","shulker_side.png","shulker_bottom.png","shulker_box.png"]
+  },
+  "gray_shulker_box": {
+    "textures": ["shulker_side.png","shulker_side.png","shulker_side.png","shulker_side.png","shulker_bottom.png","shulker_box.png"]
+  },
+  "black_shulker_box": {
+    "textures": ["shulker_side.png","shulker_side.png","shulker_side.png","shulker_side.png","shulker_bottom.png","shulker_box.png"]
+  },
+
+
+
+
+
 }

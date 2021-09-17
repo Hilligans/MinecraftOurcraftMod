@@ -5,10 +5,13 @@ import Hilligans.Block.Blocks;
 import Hilligans.Client.Rendering.NewRenderer.BlockModel;
 import Hilligans.Data.Other.BlockProperties;
 import Hilligans.Data.Other.BlockShapes.BlockShape;
+import Hilligans.Data.Other.BlockStates.BlockState;
 import Hilligans.ModHandler.Content.ModContent;
 import Hilligans.WorldSave.WorldLoader;
 import dev.Hilligans.Main;
+import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -17,15 +20,23 @@ import java.util.HashMap;
 public class BlockManager {
 
     public static Int2ObjectOpenHashMap<Block> blocks = new Int2ObjectOpenHashMap<Block>();
+    public static Int2IntOpenHashMap blockStates = new Int2IntOpenHashMap();
     public static HashMap<String, BlockShape> blockShapes = new HashMap<>();
     public static HashMap<String, Boolean> transparentBlocks = new HashMap<>();
 
+    public static Object2IntOpenHashMap<String> blockStatesId = new Object2IntOpenHashMap<>();
+
     static{
-        blocks.put(0, Blocks.AIR);
-        blocks.put(9670,Blocks.AIR);//CAVE AIR
+        register(0, 0,Blocks.AIR);
+        register(9670,0,Blocks.AIR);//CAVE AIR
         transparentBlocks.put("minecraft:block/leaves",true);
         transparentBlocks.put("minecraft:block/cross",true);
         transparentBlocks.put("minecraft:block/tinted_cross",true);
+    }
+
+    public static void register(int id, int blockState, Block block) {
+        blocks.putIfAbsent(id,block);
+        blockStates.putIfAbsent(id,blockState);
     }
 
     public static void loadVersion(String name) {
@@ -86,9 +97,10 @@ public class BlockManager {
             modContent.registerBlock(block);
             JSONObject jsonObject1 = jsonObject.getJSONObject(s);
             JSONArray jsonArray = jsonObject1.getJSONArray("states");
+            blockStatesId.putIfAbsent(blockName,0);
             for (int x = 0; x < jsonArray.length(); x++) {
                 JSONObject state = jsonArray.getJSONObject(x);
-                blocks.putIfAbsent(state.getInt("id"), block);
+                register(state.getInt("id"),blockStatesId.addTo(blockName,1), block);
             }
         }
     }

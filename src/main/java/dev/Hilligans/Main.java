@@ -68,10 +68,12 @@ public class Main {
             Block block = new Block(string, "/MinecraftOurcraft/Data/" + blockData.optString("data","Blocks/block.json"), modContent.modID,null);
             JSONArray textures = blockData.getJSONArray("textures");
             for(int x = 0; x < textures.length(); x++) {
-                block.blockProperties.addTexture(textures.getString(x),x);
+                block.blockProperties.addTexture(textures.getString(x),x,textures.length());
             }
+            int a = 0;
             for(int x : versionTable.blockNetworkIDs.get(block.name)) {
-                BlockManager.blocks.put(x,block);
+                BlockManager.register(x,a,block);
+                a++;
             }
             return block;
         };
