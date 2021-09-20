@@ -27,7 +27,6 @@ public class BlockModelParser {
                 JSONObject face = faces.getJSONObject(string);
                 addTo(from,to,face,blockModel,string);
             }
-
         }
         BlockModel block = new BlockModel(blockModel.toString());
 
