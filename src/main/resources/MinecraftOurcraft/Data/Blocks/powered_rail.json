@@ -6,12 +6,17 @@
       "default":{
         "rotX":0,
         "rotY":0
+      },
+      "7": {
+        "rotX":0,
+        "rotY":1
       }
     }
   },
   "properties":{
     "canWalkThrough":true,
     "transparent":true,
-    "alwaysRender": true
+    "alwaysRender": true,
+    "blockStateByteCount": 2
   }
 }

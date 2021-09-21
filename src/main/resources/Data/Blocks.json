@@ -745,6 +745,11 @@
     "textures": [ "powered_rail.png"],
     "data": "Blocks/powered_rail.json"
   },
+  "detector_rail": {
+    "textures": [ "detector_rail.png"],
+    "data": "Blocks/powered_rail.json"
+  },
+
   "redstone_lamp": {
     "textures": ["redstone_lamp.png"]
   },
@@ -831,6 +836,73 @@
   "black_shulker_box": {
     "textures": ["shulker_side.png","shulker_side.png","shulker_side.png","shulker_side.png","shulker_bottom.png","shulker_box.png"]
   },
+  "iron_trapdoor": {
+    "textures": ["iron_trapdoor.png"],
+    "data": "Blocks/trapdoor.json"
+  },
+  "oak_trapdoor": {
+    "textures": ["oak_trapdoor.png"],
+    "data": "Blocks/trapdoor.json"
+  },
+  "spruce_trapdoor": {
+    "textures": ["spruce_trapdoor.png"],
+    "data": "Blocks/trapdoor.json"
+  },
+  "birch_trapdoor": {
+    "textures": ["birch_trapdoor.png"],
+    "data": "Blocks/trapdoor.json"
+  },
+  "acacia_trapdoor": {
+    "textures": ["acacia_trapdoor.png"],
+    "data": "Blocks/trapdoor.json"
+  },
+  "dark_oak_trapdoor": {
+    "textures": ["dark_oak_trapdoor.png"],
+    "data": "Blocks/trapdoor.json"
+  },
+  "warped_trapdoor": {
+    "textures": ["warped_trapdoor.png"],
+    "data": "Blocks/trapdoor.json"
+  },
+  "crimson_trapdoor": {
+    "textures": ["crimson_trapdoor.png"],
+    "data": "Blocks/trapdoor.json"
+  },
+  "jungle_trapdoor": {
+    "textures": ["jungle_trapdoor.png"],
+    "data": "Blocks/trapdoor.json"
+  },
+  "target": {
+    "textures": ["target_side.png","target_side.png","target_side.png","target_side.png","target_top.png","target_top.png"]
+  },
+  "oak_leaves": {
+    "textures": ["oak_leaves.png"],
+    "data": "Blocks/transparent_block.json"
+  },
+  "birch_leaves": {
+    "textures": ["birch_leaves.png"],
+    "data": "Blocks/transparent_block.json"
+  },
+  "spruce_leaves": {
+    "textures": ["spruce_leaves.png"],
+    "data": "Blocks/transparent_block.json"
+  },
+  "acacia_leaves": {
+    "textures": ["acacia_leaves.png"],
+    "data": "Blocks/transparent_block.json"
+  },
+  "dark_oak_leaves": {
+    "textures": ["dark_oak_leaves.png"],
+    "data": "Blocks/transparent_block.json"
+  },
+  "observer": {
+    "textures": ["observer_side.png","observer_side.png","observer_back.png","observer_front.png","observer_side.png","observer_top.png"],
+    "data": "Blocks/observer.json"
+  }
+
+
+
+
 
 
 

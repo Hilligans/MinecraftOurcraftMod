@@ -3,7 +3,7 @@
     "modelName":"block.txt"
   },
   "properties":{
-    "transparent":false,
+    "transparent":true,
     "alwaysRender": true
   }
 }
