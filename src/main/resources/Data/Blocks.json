@@ -1051,5 +1051,39 @@
   "quartz_stairs": {
     "textures": ["quartz_block_side.png","quartz_block_side.png", "quartz_block_side.png", "quartz_block_side.png", "quartz_block_top.png", "quartz_block_top.png"],
     "data": "Blocks/stair.json"
+  },
+
+  "spruce_log": {
+    "textures": ["spruce_log.png","spruce_log.png", "spruce_log.png", "spruce_log.png", "spruce_log_top.png", "spruce_log_top.png"],
+    "data": "Blocks/three_direction_block.json"
+  },
+  "oak_log": {
+    "textures": ["oak_log.png","oak_log.png", "oak_log.png", "oak_log.png", "oak_log_top.png", "oak_log_top.png"],
+    "data": "Blocks/three_direction_block.json"
+  },
+  "birch_log": {
+    "textures": ["birch_log.png","birch_log.png", "birch_log.png", "birch_log.png", "birch_log_top.png", "birch_log_top.png"],
+    "data": "Blocks/three_direction_block.json"
+  },
+  "acacia_log": {
+  "textures": ["acacia_log.png","acacia_log.png", "acacia_log.png", "acacia_log.png", "acacia_log_top.png", "acacia_log_top.png"],
+  "data": "Blocks/three_direction_block.json"
+},
+  "dark_oak_log": {
+    "textures": ["dark_oak_log.png","dark_oak_log.png", "dark_oak_log.png", "dark_oak_log.png", "dark_oak_log_top.png", "dark_oak_log_top.png"],
+    "data": "Blocks/three_direction_block.json"
+  },
+  "jungle_log": {
+  "textures": ["jungle_log.png","jungle_log.png", "jungle_log.png", "jungle_log.png", "jungle_log_top.png", "jungle_log_top.png"],
+  "data": "Blocks/three_direction_block.json"
+  },
+  "crimson_stem": {
+    "textures": ["crimson_stem.png","crimson_stem.png", "crimson_stem.png", "crimson_stem.png", "crimson_stem_top.png", "crimson_stem_top.png"],
+    "data": "Blocks/three_direction_block.json"
+  },
+  "warped_stem": {
+    "textures": ["warped_stem.png","warped_stem.png", "warped_stem.png", "warped_stem.png", "warped_stem_top.png", "warped_stem_top.png"],
+    "data": "Blocks/three_direction_block.json"
   }
+
 }

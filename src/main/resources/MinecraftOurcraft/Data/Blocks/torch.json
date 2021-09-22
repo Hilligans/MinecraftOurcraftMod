@@ -1,6 +1,7 @@
 {
   "model":{
     "modelName":"torch.json",
+    "boundingBox": [0.375,0,0.375,0.625,0.625,0.625],
     "blockStates":{
       "default":{
         "rotX":0,
