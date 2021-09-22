@@ -1084,6 +1084,23 @@
   "warped_stem": {
     "textures": ["warped_stem.png","warped_stem.png", "warped_stem.png", "warped_stem.png", "warped_stem_top.png", "warped_stem_top.png"],
     "data": "Blocks/three_direction_block.json"
-  }
+  },
+  "netherrack": {
+    "textures": ["netherrack.png"]
+  },
+  "polished_basalt": {
+    "textures": ["polished_basalt_side.png","polished_basalt_side.png","polished_basalt_side.png","polished_basalt_side.png","polished_basalt_top.png","polished_basalt_top.png"],
+    "data": "Blocks/three_direction_block.json"
+  },
 
+  "warped_nylium": {
+    "textures": ["warped_nylium_side.png", "warped_nylium_side.png", "warped_nylium_side.png", "warped_nylium_side.png", "netherrack.png", "warped_nylium.png"]
+  },
+  "crimson_nylium": {
+    "textures": ["crimson_nylium_side.png", "crimson_nylium_side.png", "crimson_nylium_side.png", "crimson_nylium_side.png", "netherrack.png", "crimson_nylium.png"]
+  },
+
+  "lava": {
+    "textures": ["lava_still.png"]
+  }
 }
