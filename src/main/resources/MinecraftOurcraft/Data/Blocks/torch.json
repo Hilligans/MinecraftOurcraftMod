@@ -1,0 +1,16 @@
+{
+  "model":{
+    "modelName":"torch.json",
+    "blockStates":{
+      "default":{
+        "rotX":0,
+        "rotY":0
+      }
+    }
+  },
+  "properties":{
+    "canWalkThrough":true,
+    "transparent":true,
+    "alwaysRender": true
+  }
+}

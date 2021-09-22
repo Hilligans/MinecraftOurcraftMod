@@ -772,6 +772,9 @@
   "dispenser": {
     "textures": ["furnace_top.png","furnace_top.png","furnace_top.png","furnace_top.png","furnace_top.png","dispenser_front_vertical.png"]
   },
+  "dropper": {
+    "textures": ["furnace_top.png","furnace_top.png","furnace_top.png","furnace_top.png","furnace_top.png","dropper_front_vertical.png"]
+  },
   "furnace": {
     "textures": ["furnace_front.png","furnace_side.png","furnace_side.png","furnace_side.png","furnace_top.png","furnace_top.png"]
   },
@@ -898,14 +901,155 @@
   "observer": {
     "textures": ["observer_side.png","observer_side.png","observer_back.png","observer_front.png","observer_side.png","observer_top.png"],
     "data": "Blocks/observer.json"
+  },
+  "torch": {
+    "textures": ["torch.png"],
+    "data": "Blocks/torch.json"
+  },
+
+  "purpur_stairs": {
+    "textures": ["purpur_block.png"],
+    "data": "Blocks/stair.json"
+  },
+  "oak_stairs": {
+    "textures": ["oak_planks.png"],
+    "data": "Blocks/stair.json"
+  },
+  "cobblestone_stairs": {
+    "textures": ["cobblestone.png"],
+    "data": "Blocks/stair.json"
+  },
+  "brick_stairs": {
+    "textures": ["bricks.png"],
+    "data": "Blocks/stair.json"
+  },
+  "stone_brick_stairs": {
+    "textures": ["stone_bricks.png"],
+    "data": "Blocks/stair.json"
+  },
+  "nether_brick_stairs": {
+    "textures": ["nether_bricks.png"],
+    "data": "Blocks/stair.json"
+  },
+  "sandstone_stairs": {
+    "textures": ["sandstone.png"],
+    "data": "Blocks/stair.json"
+  },
+  "spruce_stairs": {
+    "textures": ["spruce_planks.png"],
+    "data": "Blocks/stair.json"
+  },
+  "birch_stairs": {
+    "textures": ["birch_planks.png"],
+    "data": "Blocks/stair.json"
+  },
+  "jungle_stairs": {
+    "textures": ["jungle_planks.png"],
+    "data": "Blocks/stair.json"
+  },
+  "crimson_stairs": {
+    "textures": ["crimson_planks.png"],
+    "data": "Blocks/stair.json"
+  },
+  "warped_stairs": {
+    "textures": ["warped_planks.png"],
+    "data": "Blocks/stair.json"
+  },
+  "acacia_stairs": {
+    "textures": ["acacia_planks.png"],
+    "data": "Blocks/stair.json"
+  },
+  "dark_oak_stairs": {
+    "textures": ["dark_oak_planks.png"],
+    "data": "Blocks/stair.json"
+  },
+  "prismarine_stairs": {
+    "textures": ["prismarine.png"],
+    "data": "Blocks/stair.json"
+  },
+  "prismarine_brick_stairs": {
+    "textures": ["prismarine_bricks.png"],
+    "data": "Blocks/stair.json"
+  },
+  "dark_prismarine_stairs": {
+    "textures": ["dark_prismarine.png"],
+    "data": "Blocks/stair.json"
+  },
+  "red_sandstone_stairs": {
+    "textures": ["red_sandstone.png"],
+    "data": "Blocks/stair.json"
+  },
+  "polished_granite_stairs": {
+    "textures": ["polished_granite.png"],
+    "data": "Blocks/stair.json"
+  },
+  "smooth_red_sandstone_stairs": {
+    "textures": ["red_sandstone_top.png"],
+    "data": "Blocks/stair.json"
+  },
+  "mossy_stone_brick_stairs": {
+    "textures": ["mossy_stone_bricks.png"],
+    "data": "Blocks/stair.json"
+  },
+  "polished_diorite_stairs": {
+    "textures": ["polished_diorite.png"],
+    "data": "Blocks/stair.json"
+  },
+  "mossy_cobblestone_stairs": {
+    "textures": ["mossy_cobblestone.png"],
+    "data": "Blocks/stair.json"
+  },
+  "end_stone_brick_stairs": {
+    "textures": ["end_stone_bricks.png"],
+    "data": "Blocks/stair.json"
+  },
+  "stone_stairs": {
+    "textures": ["stone.png"],
+    "data": "Blocks/stair.json"
+  },
+  "smooth_sandstone_stairs": {
+    "textures": ["sandstone_top.png"],
+    "data": "Blocks/stair.json"
+  },
+  "smooth_quartz_stairs": {
+    "textures": ["quartz_block_top.png"],
+    "data": "Blocks/stair.json"
+  },
+  "granite_stairs": {
+    "textures": ["granite.png"],
+    "data": "Blocks/stair.json"
+  },
+  "andesite_stairs": {
+    "textures": ["andesite.png"],
+    "data": "Blocks/stair.json"
+  },
+  "red_nether_brick_stairs": {
+    "textures": ["red_nether_bricks.png"],
+    "data": "Blocks/stair.json"
+  },
+  "polished_andesite_stairs": {
+    "textures": ["polished_andesite.png"],
+    "data": "Blocks/stair.json"
+  },
+  "diorite_stairs": {
+    "textures": ["diorite.png"],
+    "data": "Blocks/stair.json"
+  },
+  "blackstone_stairs": {
+    "textures": ["blackstone.png"],
+    "data": "Blocks/stair.json"
+  },
+  "polished_blackstone_stairs": {
+    "textures": ["polished_blackstone.png"],
+    "data": "Blocks/stair.json"
+  },
+  "polished_blackstone_brick_stairs": {
+    "textures": ["polished_blackstone_bricks.png"],
+    "data": "Blocks/stair.json"
+  },
+
+  "quartz_stairs": {
+    "textures": ["quartz_block_side.png","quartz_block_side.png", "quartz_block_side.png", "quartz_block_side.png", "quartz_block_top.png", "quartz_block_top.png"],
+    "data": "Blocks/stair.json"
   }
-
-
-
-
-
-
-
-
-
 }
