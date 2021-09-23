@@ -1,0 +1,17 @@
+{
+  "model": {
+    "modelName": "xBlock.txt",
+    "colors": [0.282,0.709,0.094, 0.282,0.709,0.094,  0.282,0.709,0.094,  0.282,0.709,0.094,  0.282,0.709,0.094 ,0.282,0.709,0.443],
+    "blockStates": {
+      "default": {
+        "rotX": 0,
+        "rotY": 0
+      }
+    }
+  },
+  "properties": {
+    "canWalkThrough": true,
+    "alwaysRender": true,
+    "transparent": true
+  }
+}

@@ -3,27 +3,17 @@
     "textures": [ "stone.png" ]
   },
   "grass_block": {
-    "textures": [
-      "grass_block_side.png",
-      "grass_block_side.png",
-      "grass_block_side.png",
-      "grass_block_side.png",
-      "dirt.png",
-      "grass_block_top.png"
-    ]
+    "textures": ["grass_block_side.png", "grass_block_side.png", "grass_block_side.png", "grass_block_side.png", "dirt.png", "grass_block_top.png"],
+    "data": "Blocks/grass_block.json"
   },
   "dirt": {
     "textures": [ "dirt.png" ]
   },
   "podzol": {
-    "textures": [
-      "podzol_side.png",
-      "podzol_side.png",
-      "podzol_side.png",
-      "podzol_side.png",
-      "dirt.png",
-      "podzol_top.png"
-    ]
+    "textures": ["podzol_side.png", "podzol_side.png", "podzol_side.png", "podzol_side.png", "dirt.png", "podzol_top.png"]
+  },
+  "sand": {
+    "textures": ["sand.png"]
   },
   "warped_slab": {
     "textures": [ "warped_planks.png" ],
@@ -788,7 +778,7 @@
   },
   "water": {
     "textures": ["water_still.png"],
-    "data": "Blocks/transparent_block.json"
+    "data": "Blocks/water.json"
   },
 
   "shulker_box": {
@@ -880,23 +870,23 @@
   },
   "oak_leaves": {
     "textures": ["oak_leaves.png"],
-    "data": "Blocks/transparent_block.json"
+    "data": "Blocks/leaves.json"
   },
   "birch_leaves": {
     "textures": ["birch_leaves.png"],
-    "data": "Blocks/transparent_block.json"
+    "data": "Blocks/leaves.json"
   },
   "spruce_leaves": {
     "textures": ["spruce_leaves.png"],
-    "data": "Blocks/transparent_block.json"
+    "data": "Blocks/leaves.json"
   },
   "acacia_leaves": {
     "textures": ["acacia_leaves.png"],
-    "data": "Blocks/transparent_block.json"
+    "data": "Blocks/leaves.json"
   },
   "dark_oak_leaves": {
     "textures": ["dark_oak_leaves.png"],
-    "data": "Blocks/transparent_block.json"
+    "data": "Blocks/leaves.json"
   },
   "observer": {
     "textures": ["observer_side.png","observer_side.png","observer_back.png","observer_front.png","observer_side.png","observer_top.png"],
@@ -904,6 +894,10 @@
   },
   "torch": {
     "textures": ["torch.png"],
+    "data": "Blocks/torch.json"
+  },
+  "redstone_torch": {
+    "textures": ["redstone_torch.png"],
     "data": "Blocks/torch.json"
   },
 
@@ -1102,5 +1096,226 @@
 
   "lava": {
     "textures": ["lava_still.png"]
+  },
+
+
+  "lodestone": {
+    "textures": ["lodestone_side.png","lodestone_side.png","lodestone_side.png","lodestone_side.png","lodestone_top.png","lodestone_top.png"]
+  },
+  "barrel": {
+    "textures": ["barrel_side.png","barrel_side.png","barrel_side.png","barrel_side.png","barrel_bottom.png","barrel_top.png"]
+  },
+  "smoker": {
+    "textures": ["smoker_front.png","smoker_side.png","smoker_side.png","smoker_side.png","smoker_bottom.png","smoker_top.png"]
+  },
+  "blast_furnace": {
+    "textures": ["blast_furnace_front.png","blast_furnace_side.png","blast_furnace_side.png","blast_furnace_side.png","blast_furnace_top.png","blast_furnace_top.png"]
+  },
+  "loom": {
+    "textures": ["loom_front.png","loom_side.png","loom_side.png","loom_side.png","loom_bottom.png","loom_top.png"]
+  },
+  "cartography_table": {
+    "textures": ["cartography_table_side1.png","cartography_table_side1.png","cartography_table_side2.png","cartography_table_side3.png","cartography_table_top.png","cartography_table_top.png"]
+  },
+
+
+  "grass": {
+    "textures": ["grass.png"],
+    "data": "Blocks/green_plant.json"
+  },
+  "poppy": {
+    "textures": ["poppy.png"],
+    "data": "Blocks/plant.json"
+  },
+  "dandelion": {
+    "textures": ["dandelion.png"],
+    "data": "Blocks/plant.json"
+  },
+  "blue_orchid": {
+    "textures": ["blue_orchid.png"],
+    "data": "Blocks/plant.json"
+  },
+  "allium": {
+    "textures": ["allium.png"],
+    "data": "Blocks/plant.json"
+  },
+  "azure_bluet": {
+    "textures": ["azure_bluet.png"],
+    "data": "Blocks/plant.json"
+  },
+  "red_tulip": {
+    "textures": ["red_tulip.png"],
+    "data": "Blocks/plant.json"
+  },
+  "orange_tulip": {
+    "textures": ["orange_tulip.png"],
+    "data": "Blocks/plant.json"
+  },
+  "spruce_sapling": {
+    "textures": ["spruce_sapling.png"],
+    "data": "Blocks/plant.json"
+  },
+  "dark_oak_sapling": {
+    "textures": ["dark_oak_sapling.png"],
+    "data": "Blocks/plant.json"
+  },
+  "birch_sapling": {
+    "textures": ["birch_sapling.png"],
+    "data": "Blocks/plant.json"
+  },
+  "acacia_sapling": {
+    "textures": ["acacia_sapling.png"],
+    "data": "Blocks/plant.json"
+  },
+  "oak_sapling": {
+    "textures": ["oak_sapling.png"],
+    "data": "Blocks/plant.json"
+  },
+  "jungle_sapling": {
+    "textures": ["jungle_sapling.png"],
+    "data": "Blocks/plant.json"
+  },
+  "white_tulip": {
+    "textures": ["white_tulip.png"],
+    "data": "Blocks/plant.json"
+  },
+  "pink_tulip": {
+    "textures": ["pink_tulip.png"],
+    "data": "Blocks/plant.json"
+  },
+  "cornflower": {
+    "textures": ["cornflower.png"],
+    "data": "Blocks/plant.json"
+  },
+  "lily_of_the_valley": {
+    "textures": ["lily_of_the_valley.png"],
+    "data": "Blocks/plant.json"
+  },
+  "wither_rose": {
+    "textures": ["wither_rose.png"],
+    "data": "Blocks/plant.json"
+  },
+  "brown_mushroom": {
+    "textures": ["brown_mushroom.png"],
+    "data": "Blocks/plant.json"
+  },
+  "red_mushroom": {
+    "textures": ["red_mushroom.png"],
+    "data": "Blocks/plant.json"
+  },
+  "crimson_fungus": {
+    "textures": ["crimson_fungus.png"],
+    "data": "Blocks/plant.json"
+  },
+  "warped_fungus": {
+    "textures": ["warped_fungus.png"],
+    "data": "Blocks/plant.json"
+  },
+  "crimson_roots": {
+    "textures": ["crimson_roots.png"],
+    "data": "Blocks/plant.json"
+  },
+  "warped_roots": {
+    "textures": ["warped_roots.png"],
+    "data": "Blocks/plant.json"
+  },
+  "nether_sprouts": {
+    "textures": ["nether_sprouts.png"],
+    "data": "Blocks/plant.json"
+  },
+  "weeping_vines": {
+    "textures": ["weeping_vines.png"],
+    "data": "Blocks/plant.json"
+  },
+  "twisting_vines": {
+    "textures": ["twisting_vines.png"],
+    "data": "Blocks/plant.json"
+  },
+  "sugar_cane": {
+    "textures": ["sugar_cane.png"],
+    "data": "Blocks/plant.json"
+  },
+  "kelp": {
+    "textures": ["kelp.png"],
+    "data": "Blocks/plant.json"
+  },
+  "bamboo": {
+    "textures": ["bamboo_stage0.png"],
+    "data": "Blocks/plant.json"
+  },
+  "lilac": {
+    "textures": ["lilac_bottom.png"],
+    "data": "Blocks/plant.json"
+  },
+  "rose_bush": {
+    "textures": ["rose_bush_bottom.png"],
+    "data": "Blocks/plant.json"
+  },
+  "peony": {
+    "textures": ["peony_bottom.png"],
+    "data": "Blocks/plant.json"
+  },
+  "tall_grass": {
+    "textures": ["tall_grass_bottom.png"],
+    "data": "Blocks/green_plant.json"
+  },
+  "large_fern": {
+    "textures": ["large_fern_bottom.png"],
+    "data": "Blocks/green_plant.json"
+  },
+  "sunflower": {
+    "textures": ["sunflower_bottom.png"],
+    "data": "Blocks/plant.json"
+  },
+  "dead_bush": {
+    "textures": ["dead_bush.png"],
+    "data": "Blocks/plant.json"
+  },
+  "fern": {
+    "textures": ["fern.png"],
+    "data": "Blocks/green_plant.json"
+  },
+  "tube_coral": {
+    "textures": ["tube_coral.png"],
+    "data": "Blocks/plant.json"
+  },
+  "brain_coral": {
+    "textures": ["brain_coral.png"],
+    "data": "Blocks/plant.json"
+  },
+  "bubble_coral": {
+    "textures": ["bubble_coral.png"],
+    "data": "Blocks/plant.json"
+  },
+  "fire_coral": {
+    "textures": ["fire_coral.png"],
+    "data": "Blocks/plant.json"
+  },
+  "horn_coral": {
+    "textures": ["horn_coral.png"],
+    "data": "Blocks/plant.json"
+  },
+  "dead_tube_coral": {
+    "textures": ["dead_tube_coral.png"],
+    "data": "Blocks/plant.json"
+  },
+  "dead_brain_coral": {
+    "textures": ["dead_brain_coral.png"],
+    "data": "Blocks/plant.json"
+  },
+  "dead_bubble_coral": {
+    "textures": ["dead_bubble_coral.png"],
+    "data": "Blocks/plant.json"
+  },
+  "dead_fire_coral": {
+    "textures": ["dead_fire_coral.png"],
+    "data": "Blocks/plant.json"
+  },
+  "dead_horn_coral": {
+    "textures": ["dead_horn_coral.png"],
+    "data": "Blocks/plant.json"
   }
+
+
+
 }

@@ -1,0 +1,15 @@
+{
+  "model":{
+    "colors": [0.282,0.709,0.094, 0.282,0.709,0.094,  0.282,0.709,0.094,  0.282,0.709,0.094,  0.282,0.709,0.094 ,0.282,0.709,0.443],
+    "modelName":"block.txt",
+    "blockStates":{
+      "default":{
+        "rotX":0,
+        "rotY":0
+      }
+    }
+  },
+  "properties":{
+    "transparent":true
+  }
+}

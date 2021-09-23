@@ -1,0 +1,17 @@
+{
+  "model":{
+    "colors": [1,1,1, 1,1,1,  1,1,1,  1,1,1,  1,1,1 ,0.556,0.725,0.443],
+    "modelName":"block.txt",
+    "blockStates":{
+      "default":{
+        "rotX":0,
+        "rotY":0
+      }
+    }
+  },
+  "properties":{
+    "canWalkThrough":false,
+    "transparent":false,
+    "airBlock":false
+  }
+}
