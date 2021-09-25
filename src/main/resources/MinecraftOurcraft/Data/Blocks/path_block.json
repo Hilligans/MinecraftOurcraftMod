@@ -1,0 +1,16 @@
+{
+  "model":{
+    "modelName":"path_block.json",
+    "boundingBox": [0,0,0,1,0.9375,1],
+    "blockStates":{
+      "default":{
+        "rotX":0,
+        "rotY":0
+      }
+    }
+  },
+
+  "properties": {
+    "transparent": true
+  }
+}

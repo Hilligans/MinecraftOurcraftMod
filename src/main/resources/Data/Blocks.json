@@ -15,6 +15,9 @@
   "sand": {
     "textures": ["sand.png"]
   },
+  "red_sand": {
+    "textures": ["red_sand.png"]
+  },
   "warped_slab": {
     "textures": [ "warped_planks.png" ],
     "data": "Blocks/slab.json"
@@ -1079,6 +1082,39 @@
     "textures": ["warped_stem.png","warped_stem.png", "warped_stem.png", "warped_stem.png", "warped_stem_top.png", "warped_stem_top.png"],
     "data": "Blocks/three_direction_block.json"
   },
+
+  "stripped_spruce_log": {
+    "textures": ["stripped_spruce_log.png","stripped_spruce_log.png", "stripped_spruce_log.png", "stripped_spruce_log.png", "stripped_spruce_log_top.png", "stripped_spruce_log_top.png"],
+    "data": "Blocks/three_direction_block.json"
+  },
+  "stripped_oak_log": {
+    "textures": ["stripped_oak_log.png","stripped_oak_log.png", "stripped_oak_log.png", "stripped_oak_log.png", "stripped_oak_log_top.png", "stripped_oak_log_top.png"],
+    "data": "Blocks/three_direction_block.json"
+  },
+  "stripped_birch_log": {
+    "textures": ["stripped_birch_log.png","stripped_birch_log.png", "stripped_birch_log.png", "stripped_birch_log.png", "stripped_birch_log_top.png", "stripped_birch_log_top.png"],
+    "data": "Blocks/three_direction_block.json"
+  },
+  "stripped_acacia_log": {
+    "textures": ["stripped_acacia_log.png","stripped_acacia_log.png", "stripped_acacia_log.png", "stripped_acacia_log.png", "stripped_acacia_log_top.png", "stripped_acacia_log_top.png"],
+    "data": "Blocks/three_direction_block.json"
+  },
+  "stripped_dark_oak_log": {
+    "textures": ["stripped_dark_oak_log.png","stripped_dark_oak_log.png", "stripped_dark_oak_log.png", "stripped_dark_oak_log.png", "stripped_dark_oak_log_top.png", "stripped_dark_oak_log_top.png"],
+    "data": "Blocks/three_direction_block.json"
+  },
+  "stripped_jungle_log": {
+    "textures": ["stripped_jungle_log.png","stripped_jungle_log.png", "stripped_jungle_log.png", "stripped_jungle_log.png", "stripped_jungle_log_top.png", "stripped_jungle_log_top.png"],
+    "data": "Blocks/three_direction_block.json"
+  },
+  "stripped_crimson_stem": {
+    "textures": ["stripped_crimson_stem.png","stripped_crimson_stem.png", "stripped_crimson_stem.png", "stripped_crimson_stem.png", "stripped_crimson_stem_top.png", "stripped_crimson_stem_top.png"],
+    "data": "Blocks/three_direction_block.json"
+  },
+  "stripped_warped_stem": {
+    "textures": ["stripped_warped_stem.png","stripped_warped_stem.png", "stripped_warped_stem.png", "stripped_warped_stem.png", "stripped_warped_stem_top.png", "stripped_warped_stem_top.png"],
+    "data": "Blocks/three_direction_block.json"
+  },
   "netherrack": {
     "textures": ["netherrack.png"]
   },
@@ -1227,8 +1263,16 @@
     "textures": ["weeping_vines.png"],
     "data": "Blocks/plant.json"
   },
+  "weeping_vines_plant": {
+    "textures": ["weeping_vines_plant.png"],
+    "data": "Blocks/plant.json"
+  },
   "twisting_vines": {
     "textures": ["twisting_vines.png"],
+    "data": "Blocks/plant.json"
+  },
+  "twisting_vines_plant": {
+    "textures": ["twisting_vines_plant.png"],
     "data": "Blocks/plant.json"
   },
   "sugar_cane": {
@@ -1314,6 +1358,16 @@
   "dead_horn_coral": {
     "textures": ["dead_horn_coral.png"],
     "data": "Blocks/plant.json"
+  },
+  "grass_path": {
+    "textures": ["dirt_path_side.png", "dirt_path_side.png", "dirt_path_side.png", "dirt_path_side.png", "dirt.png", "dirt_path_top.png"],
+    "data": "Blocks/path_block.json"
+  },
+  "tnt": {
+    "textures": ["tnt_side.png", "tnt_side.png", "tnt_side.png", "tnt_side.png", "tnt_bottom.png", "tnt_top.png"]
+  },
+  "basalt": {
+    "textures": ["basalt_side.png", "basalt_side.png", "basalt_side.png", "basalt_side.png", "basalt_top.png", "basalt_top.png"]
   }
 
 

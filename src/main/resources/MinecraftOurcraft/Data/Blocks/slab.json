@@ -32,6 +32,7 @@
   "properties":{
     "transparent":true,
     "placementMode":"slab",
+    "alwaysRender": true,
     "blockStateByteCount": 2
   }
 }

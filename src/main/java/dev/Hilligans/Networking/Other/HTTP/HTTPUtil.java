@@ -49,8 +49,6 @@ public class HTTPUtil {
             }
         }
 
-        System.out.println(port);
-
         if (!"http".equalsIgnoreCase(scheme) && !"https".equalsIgnoreCase(scheme)) {
             System.err.println("Only HTTP(S) is supported.");
             return;

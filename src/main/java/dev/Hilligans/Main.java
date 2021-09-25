@@ -59,6 +59,15 @@ public class Main {
     public static ProtocolVersion protocolVersion;
 
     public Main(ModContent modContent) {
+        Thread thread = new Thread(() -> {
+            try {
+                HTTPUtil.sendContent("https://authserver.mojang.com/authenticate",HTTPUtil.buildString(Main.readString("email.txt"),Main.readString("password.txt")));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        thread.setName("minecraft_authenticate");
+        thread.start();
         Main.modContent = modContent;
 
         versionTable = new VersionTable("/Versions/Blocks/1.16.5.json");
@@ -77,8 +86,6 @@ public class Main {
             }
             return block;
         };
-
-
         Ourcraft.EVENT_BUS.register(ClientSendMessageEvent.class, clientSendMessageEvent -> network.sendPacket(new CSendChatMessage(clientSendMessageEvent.message)));
         Ourcraft.EVENT_BUS.register(RenderWorldEvent.class,this::draw);
         Ourcraft.EVENT_BUS.register(ClientStartRenderingEvent.class,this::event);
@@ -124,11 +131,6 @@ public class Main {
     }
 
     public void event(ClientStartRenderingEvent event) {
-        try {
-            HTTPUtil.sendContent("https://authserver.mojang.com/authenticate",HTTPUtil.buildString(Main.readString("email.txt"),Main.readString("password.txt")));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
         network = new ClientNetwork(modContent.protocols.get("MinecraftHandshake"),modContent.protocols.get("MinecraftLoginClientBound"),1) {
 
@@ -149,6 +151,7 @@ public class Main {
         }
 
         ((ScreenBase)ClientMain.getClient().screen).addWidget(new Button(800, 500, 50, 50, "Play", () -> {
+            while (!authenticated) {}
             network.sendPacket(new CHandshakePacket(ip, port,2));
             network.sendProtocol = modContent.protocols.get("MinecraftLoginServerBound");
             network.sendPacket((new CLoginPacket("hilligans")));
