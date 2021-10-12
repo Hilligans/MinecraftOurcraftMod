@@ -1,17 +1,20 @@
 package dev.Hilligans;
 
-import Hilligans.Block.Block;
-import Hilligans.Client.Rendering.ScreenBase;
-import Hilligans.Client.Rendering.Widgets.Button;
-import Hilligans.ClientMain;
-import Hilligans.ModHandler.Content.ModContent;
-import Hilligans.ModHandler.Events.Client.ClientSendMessageEvent;
-import Hilligans.ModHandler.Events.Client.ClientStartRenderingEvent;
-import Hilligans.ModHandler.Events.Client.RenderWorldEvent;
-import Hilligans.ModHandler.Mod;
-import Hilligans.Network.*;
-import Hilligans.Ourcraft;
-import Hilligans.WorldSave.WorldLoader;
+import dev.Hilligans.ourcraft.Block.Block;
+import dev.Hilligans.ourcraft.Client.Camera;
+import dev.Hilligans.ourcraft.Client.Key.KeyHandler;
+import dev.Hilligans.ourcraft.Client.Key.KeyPress;
+import dev.Hilligans.ourcraft.Client.Rendering.ScreenBase;
+import dev.Hilligans.ourcraft.Client.Rendering.Widgets.Button;
+import dev.Hilligans.ourcraft.Client.ScreenShot;
+import dev.Hilligans.ourcraft.ClientMain;
+import dev.Hilligans.ourcraft.ModHandler.Content.ModContent;
+import dev.Hilligans.ourcraft.ModHandler.Events.Client.*;
+import dev.Hilligans.ourcraft.ModHandler.Mod;
+import dev.Hilligans.ourcraft.Network.*;
+import dev.Hilligans.ourcraft.Ourcraft;
+import dev.Hilligans.ourcraft.Util.Settings;
+import dev.Hilligans.ourcraft.WorldSave.WorldLoader;
 import dev.Hilligans.Networking.Other.EmptyPacket;
 import dev.Hilligans.Networking.Other.HTTP.HTTPUtil;
 import dev.Hilligans.Networking.Other.Pipelines.MinecraftPacketDecoder;
@@ -25,18 +28,26 @@ import dev.Hilligans.Networking.Packets.Play.Client.CTeleportConfirm;
 import dev.Hilligans.Networking.Packets.Play.Server.*;
 import dev.Hilligans.Networking.Packets.Status.CQueryPacket;
 import dev.Hilligans.Networking.Packets.Status.SServerList;
-import dev.Hilligans.Util.BlockManager;
-import dev.Hilligans.Util.BlockModelParser;
-import dev.Hilligans.Util.ProtocolVersion;
-import dev.Hilligans.Util.VersionTable;
+import dev.Hilligans.Util.*;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.lwjgl.opengl.GL30;
+import org.lwjgl.stb.STBImage;
+import org.lwjgl.stb.STBImageWrite;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.awt.image.Raster;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.ByteBuffer;
+
+import static org.lwjgl.opengl.GL11.*;
+import static org.lwjgl.opengl.GL30.*;
+import static org.lwjgl.opengl.GL30C.glBindFramebuffer;
 
 @Mod(modID = "MinecraftOurcraft")
 public class Main {
@@ -52,13 +63,18 @@ public class Main {
     public static String accessToken;
     public static String UUID;
     public static int messageID;
+    public static int maxChunks = 250;
 
     public static boolean authenticated = false;
 
     public static VersionTable versionTable;
     public static ProtocolVersion protocolVersion;
 
+    public boolean takeScreenShot = false;
+
     public Main(ModContent modContent) {
+        Settings.worldName = ip;
+
         Thread thread = new Thread(() -> {
             try {
                 HTTPUtil.sendContent("https://authserver.mojang.com/authenticate",HTTPUtil.buildString(Main.readString("email.txt"),Main.readString("password.txt")));
@@ -69,9 +85,19 @@ public class Main {
         thread.setName("minecraft_authenticate");
         thread.start();
         Main.modContent = modContent;
+        Settings.requestChunks = false;
+        ChunkProcessor.create();
 
-        versionTable = new VersionTable("/Versions/Blocks/1.16.5.json");
-        protocolVersion = new ProtocolVersion("/Versions/Protocols/1.16.5.json");
+        try {
+            versionTable = new VersionTable("/Versions/Blocks/1.16.5.json");
+        } catch (Exception e) {
+            versionTable = new VersionTable("Versions/Blocks/1.16.5.json");
+        }
+        try {
+            protocolVersion = new ProtocolVersion("/Versions/Protocols/1.16.5.json");
+        } catch(Exception e) {
+            protocolVersion = new ProtocolVersion("Versions/Protocols/1.16.5.json");
+        }
 
         modContent.blockParser = (blockData, string) -> {
             Block block = new Block(string, "/MinecraftOurcraft/Data/" + blockData.optString("data","Blocks/block.json"), modContent.modID,null);
@@ -86,9 +112,13 @@ public class Main {
             }
             return block;
         };
-        Ourcraft.EVENT_BUS.register(ClientSendMessageEvent.class, clientSendMessageEvent -> network.sendPacket(new CSendChatMessage(clientSendMessageEvent.message)));
-        Ourcraft.EVENT_BUS.register(RenderWorldEvent.class,this::draw);
-        Ourcraft.EVENT_BUS.register(ClientStartRenderingEvent.class,this::event);
+        modContent.gameInstance.EVENT_BUS.register(ClientSendMessageEvent.class, clientSendMessageEvent -> network.sendPacket(new CSendChatMessage(clientSendMessageEvent.message)));
+        modContent.gameInstance.EVENT_BUS.register(RenderWorldEvent.class,this::draw);
+        modContent.gameInstance.EVENT_BUS.register(ClientStartRenderingEvent.class,this::event);
+        modContent.gameInstance.EVENT_BUS.register(RenderPreEvent.class,this::pre);
+        modContent.gameInstance.EVENT_BUS.register(RenderStartEvent.class,this::start);
+        modContent.gameInstance.EVENT_BUS.register(RenderPostEvent.class,this::end);
+
         modContent.registerPacket("MinecraftHandshake",0, CHandshakePacket::new);
         modContent.registerPacket("MinecraftStatusClientBound",0, SServerList::new);
         modContent.registerPacket("MinecraftStatusServerBound",0, CQueryPacket::new);
@@ -121,17 +151,59 @@ public class Main {
 
     long time;
     public void draw(RenderWorldEvent event) {
+        KeyHandler.register(new KeyPress() {
+            @Override
+            public void onPress() {
+                takeScreenShot = true;
+            }
+        },KeyHandler.GLFW_KEY_F7);
+        KeyHandler.register(new KeyPress() {
+            @Override
+            public void onPress() {
+                System.out.println();
+            }
+        },KeyHandler.GLFW_KEY_KP_4);
+        Camera.moveSpeed = 0.1f;
         if(ClientMain.getClient().renderWorld ) {
             try {
-                if(System.currentTimeMillis() - time > 1000) {
+                if(System.currentTimeMillis() - time > 50) {
                     time = System.currentTimeMillis();
+                    network.sendPacket(new CPlayerPosition(Camera.pos.x,Camera.pos.y,Camera.pos.z));
                 }
             } catch (Exception ignored) {}
         }
     }
 
-    public void event(ClientStartRenderingEvent event) {
+    static int width = 1920 * 16;
+    static int height = 1080 * 16;
 
+    static int renderDistance = 8;
+    static int buffer = -1;
+    static int texture = -1;
+    public void pre(RenderPreEvent event) {
+        if(takeScreenShot) {
+            renderDistance = Settings.renderDistance;
+            Settings.renderDistance = 512;
+            ClientMain.getClient().windowX = width;
+            ClientMain.getClient().windowY = height;
+            ScreenShot.largeScreenshot(width,height,ClientMain.getClient());
+        }
+    }
+
+    public void start(RenderStartEvent event) {
+        if(takeScreenShot) {
+        }
+    }
+
+    public void end(RenderPostEvent event) {
+        if(takeScreenShot) {
+            takeScreenShot = false;
+            Settings.renderDistance = renderDistance;
+        }
+    }
+
+    public void event(ClientStartRenderingEvent event) {
+        System.out.println(glGetInteger(GL30.GL_MAX_VIEWPORT_DIMS));
         network = new ClientNetwork(modContent.protocols.get("MinecraftHandshake"),modContent.protocols.get("MinecraftLoginClientBound"),1) {
 
             @Override

@@ -1,7 +1,7 @@
 package dev.Hilligans.Networking.Other.Pipelines;
 
-import Hilligans.Network.PacketData;
-import Hilligans.Network.PacketEncoder;
+import dev.Hilligans.ourcraft.Network.PacketData;
+import dev.Hilligans.ourcraft.Network.PacketEncoder;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 

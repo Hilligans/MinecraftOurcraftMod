@@ -1,6 +1,6 @@
 package dev.Hilligans.Util;
 
-import Hilligans.WorldSave.WorldLoader;
+import dev.Hilligans.ourcraft.WorldSave.WorldLoader;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

@@ -1,7 +1,7 @@
 package dev.Hilligans.Networking.Packets.Status;
 
-import Hilligans.Network.PacketBase;
-import Hilligans.Network.PacketData;
+import dev.Hilligans.ourcraft.Network.PacketBase;
+import dev.Hilligans.ourcraft.Network.PacketData;
 
 public class CQueryPacket extends PacketBase {
 

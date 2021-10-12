@@ -1,7 +1,7 @@
 package dev.Hilligans.Networking.Packets.Play.Client;
 
-import Hilligans.Network.PacketBase;
-import Hilligans.Network.PacketData;
+import dev.Hilligans.ourcraft.Network.PacketBase;
+import dev.Hilligans.ourcraft.Network.PacketData;
 import dev.Hilligans.Main;
 
 public class CKeepAlivePacket extends PacketBase {

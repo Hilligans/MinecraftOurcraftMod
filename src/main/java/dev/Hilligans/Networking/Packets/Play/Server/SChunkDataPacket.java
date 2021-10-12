@@ -1,14 +1,19 @@
 package dev.Hilligans.Networking.Packets.Play.Server;
 
-import Hilligans.Block.Blocks;
-import Hilligans.ClientMain;
-import Hilligans.Network.PacketBase;
-import Hilligans.Network.PacketData;
-import Hilligans.Tag.CompoundTag;
-import Hilligans.Util.ByteArray;
-import Hilligans.World.Chunk;
+import dev.Hilligans.ourcraft.Block.Blocks;
+import dev.Hilligans.ourcraft.ClientMain;
+import dev.Hilligans.ourcraft.Network.PacketBase;
+import dev.Hilligans.ourcraft.Network.PacketData;
+import dev.Hilligans.ourcraft.Tag.CompoundTag;
+import dev.Hilligans.ourcraft.Util.ByteArray;
+import dev.Hilligans.ourcraft.World.Chunk;
+import dev.Hilligans.ourcraft.World.DriveChunk;
+import dev.Hilligans.ourcraft.World.World;
+import dev.Hilligans.ourcraft.WorldSave.ChunkLoader;
+import dev.Hilligans.Main;
 import dev.Hilligans.Util.BlockManager;
 import dev.Hilligans.Util.BlockPalette;
+import dev.Hilligans.Util.ChunkProcessor;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 
@@ -84,11 +89,16 @@ public class SChunkDataPacket extends PacketBase {
                         blocks[i] = val;
                     }
                     Chunk chunk = ClientMain.getClient().clientWorld.getChunk(chunkX, chunkZ);
+                    boolean aa = false;
                     if (chunk == null) {
-                        chunk = new Chunk(chunkX, chunkZ, ClientMain.getClient().clientWorld);
-                        ClientMain.getClient().clientWorld.setChunk(chunk);
+                        aa = true;
+                        if(chunkCount < Main.maxChunks) {
+                            chunkCount++;
+                            chunk = new Chunk(chunkX, chunkZ, ClientMain.getClient().clientWorld);
+                        } else {
+                            chunk = new DriveChunk(chunkX, chunkZ,ClientMain.getClient().clientWorld, ChunkProcessor::process);
+                        }
                     }
-
                     for (x = 0; x < 16; x++) {
                         for (int y = 0; y < 16; y++) {
                             for (int z = 0; z < 16; z++) {
@@ -102,6 +112,10 @@ public class SChunkDataPacket extends PacketBase {
                             }
                         }
                     }
+                    ChunkLoader.readWriteChunk(chunk);
+                    if(aa) {
+                        ClientMain.getClient().clientWorld.setChunk(chunk, chunk.x, chunk.z);
+                    }
                 } catch (Exception ignored) {
                     ignored.printStackTrace();
                 }
@@ -110,6 +124,8 @@ public class SChunkDataPacket extends PacketBase {
 
 
     }
+
+    static int chunkCount = 0;
 
     @Override
     public void handle() {

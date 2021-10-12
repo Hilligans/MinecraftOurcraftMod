@@ -1,7 +1,7 @@
 package dev.Hilligans.Networking.Other;
 
-import Hilligans.Network.PacketBase;
-import Hilligans.Network.PacketData;
+import dev.Hilligans.ourcraft.Network.PacketBase;
+import dev.Hilligans.ourcraft.Network.PacketData;
 
 public class EmptyPacket extends PacketBase {
     @Override

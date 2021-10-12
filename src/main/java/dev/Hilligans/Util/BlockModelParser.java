@@ -1,9 +1,9 @@
 package dev.Hilligans.Util;
 
-import Hilligans.Block.Block;
-import Hilligans.Client.Rendering.NewRenderer.BlockModel;
-import Hilligans.Client.Rendering.NewRenderer.PrimitiveBuilder;
-import Hilligans.Client.Rendering.NewRenderer.Shader;
+import dev.Hilligans.ourcraft.Block.Block;
+import dev.Hilligans.ourcraft.Client.Rendering.NewRenderer.BlockModel;
+import dev.Hilligans.ourcraft.Client.Rendering.NewRenderer.PrimitiveBuilder;
+import dev.Hilligans.ourcraft.Client.Rendering.NewRenderer.Shader;
 import org.joml.Vector3f;
 import org.json.JSONArray;
 import org.json.JSONObject;

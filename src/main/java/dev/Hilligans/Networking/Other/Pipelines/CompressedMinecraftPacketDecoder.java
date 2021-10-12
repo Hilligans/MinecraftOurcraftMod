@@ -1,6 +1,6 @@
 package dev.Hilligans.Networking.Other.Pipelines;
 
-import Hilligans.Network.PacketData;
+import dev.Hilligans.ourcraft.Network.PacketData;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 
@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.zip.Deflater;
 import java.util.zip.Inflater;
 
-public class CompressedMinecraftPacketDecoder extends MinecraftPacketDecoder{
+public class CompressedMinecraftPacketDecoder extends MinecraftPacketDecoder {
 
     Inflater inflater;
 

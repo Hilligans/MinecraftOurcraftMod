@@ -1,6 +1,6 @@
 package dev.Hilligans.Networking.Other.Pipelines;
 
-import Hilligans.Network.PacketData;
+import dev.Hilligans.ourcraft.Network.PacketData;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;

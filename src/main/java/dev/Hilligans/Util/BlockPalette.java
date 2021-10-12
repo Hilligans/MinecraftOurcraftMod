@@ -1,6 +1,6 @@
 package dev.Hilligans.Util;
 
-import Hilligans.Util.ByteArray;
+import dev.Hilligans.ourcraft.Util.ByteArray;
 
 import java.util.Arrays;
 

@@ -1,13 +1,13 @@
 package dev.Hilligans.Util;
 
-import Hilligans.Block.Block;
-import Hilligans.Block.Blocks;
-import Hilligans.Client.Rendering.NewRenderer.BlockModel;
-import Hilligans.Data.Other.BlockProperties;
-import Hilligans.Data.Other.BlockShapes.BlockShape;
-import Hilligans.Data.Other.BlockStates.BlockState;
-import Hilligans.ModHandler.Content.ModContent;
-import Hilligans.WorldSave.WorldLoader;
+import dev.Hilligans.ourcraft.Block.Block;
+import dev.Hilligans.ourcraft.Block.Blocks;
+import dev.Hilligans.ourcraft.Client.Rendering.NewRenderer.BlockModel;
+import dev.Hilligans.ourcraft.Data.Other.BlockProperties;
+import dev.Hilligans.ourcraft.Data.Other.BlockShapes.BlockShape;
+import dev.Hilligans.ourcraft.Data.Other.BlockStates.BlockState;
+import dev.Hilligans.ourcraft.ModHandler.Content.ModContent;
+import dev.Hilligans.ourcraft.WorldSave.WorldLoader;
 import dev.Hilligans.Main;
 import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;

@@ -1,10 +1,10 @@
 package dev.Hilligans.Util;
 
-import Hilligans.Block.Block;
-import Hilligans.Data.Other.BlockProperties;
-import Hilligans.ModHandler.Content.ModContent;
-import Hilligans.Ourcraft;
-import Hilligans.WorldSave.WorldLoader;
+import dev.Hilligans.ourcraft.Block.Block;
+import dev.Hilligans.ourcraft.Data.Other.BlockProperties;
+import dev.Hilligans.ourcraft.ModHandler.Content.ModContent;
+import dev.Hilligans.ourcraft.Ourcraft;
+import dev.Hilligans.ourcraft.WorldSave.WorldLoader;
 import dev.Hilligans.Main;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -17,7 +17,7 @@ public class VersionTable {
 
 
     public VersionTable(String path) {
-        JSONObject jsonObject = new JSONObject(WorldLoader.readString(path));
+        JSONObject jsonObject = new JSONObject(Main.readString(path));
         JSONArray jsonArray = jsonObject.getJSONArray("blocks");
         for(int x = 0; x < jsonArray.length(); x++) {
             blockNetworkIDs.computeIfAbsent(jsonArray.getString(x), a -> new ArrayList<>()).add(x);

@@ -1,7 +1,7 @@
 package dev.Hilligans.Networking.Other.HTTP;
 
-import Hilligans.Ourcraft;
-import Hilligans.WorldSave.WorldLoader;
+import dev.Hilligans.ourcraft.Ourcraft;
+import dev.Hilligans.ourcraft.WorldSave.WorldLoader;
 import dev.Hilligans.Main;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.ByteBuf;

@@ -1368,6 +1368,10 @@
   },
   "basalt": {
     "textures": ["basalt_side.png", "basalt_side.png", "basalt_side.png", "basalt_side.png", "basalt_top.png", "basalt_top.png"]
+  },
+  "chain": {
+    "textures": ["chain.png"],
+    "data": "Blocks/plant.json"
   }
 
 

@@ -1,8 +1,8 @@
 package dev.Hilligans.Networking.Packets.Play.Server;
 
-import Hilligans.Client.Camera;
-import Hilligans.Network.PacketBase;
-import Hilligans.Network.PacketData;
+import dev.Hilligans.ourcraft.Client.Camera;
+import dev.Hilligans.ourcraft.Network.PacketBase;
+import dev.Hilligans.ourcraft.Network.PacketData;
 import dev.Hilligans.Main;
 import dev.Hilligans.Networking.Packets.Play.Client.CTeleportConfirm;
 

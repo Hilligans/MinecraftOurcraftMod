@@ -1,9 +1,9 @@
 package dev.Hilligans.Networking.Packets.Play.Server;
 
-import Hilligans.Client.ChatWindow;
-import Hilligans.ClientMain;
-import Hilligans.Network.PacketBase;
-import Hilligans.Network.PacketData;
+import dev.Hilligans.ourcraft.Client.ChatWindow;
+import dev.Hilligans.ourcraft.ClientMain;
+import dev.Hilligans.ourcraft.Network.PacketBase;
+import dev.Hilligans.ourcraft.Network.PacketData;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

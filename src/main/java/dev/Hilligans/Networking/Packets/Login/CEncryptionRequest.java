@@ -1,7 +1,7 @@
 package dev.Hilligans.Networking.Packets.Login;
 
-import Hilligans.Network.PacketBase;
-import Hilligans.Network.PacketData;
+import dev.Hilligans.ourcraft.Network.PacketBase;
+import dev.Hilligans.ourcraft.Network.PacketData;
 import dev.Hilligans.Util.CryptManager;
 
 import javax.crypto.SecretKey;
