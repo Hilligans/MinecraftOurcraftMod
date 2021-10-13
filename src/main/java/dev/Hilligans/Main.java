@@ -1,5 +1,6 @@
 package dev.Hilligans;
 
+import dev.Hilligans.Networking.Packets.PacketList;
 import dev.Hilligans.ourcraft.Block.Block;
 import dev.Hilligans.ourcraft.Client.Camera;
 import dev.Hilligans.ourcraft.Client.Key.KeyHandler;
@@ -12,7 +13,6 @@ import dev.Hilligans.ourcraft.ModHandler.Content.ModContent;
 import dev.Hilligans.ourcraft.ModHandler.Events.Client.*;
 import dev.Hilligans.ourcraft.ModHandler.Mod;
 import dev.Hilligans.ourcraft.Network.*;
-import dev.Hilligans.ourcraft.Ourcraft;
 import dev.Hilligans.ourcraft.Util.Settings;
 import dev.Hilligans.ourcraft.WorldSave.WorldLoader;
 import dev.Hilligans.Networking.Other.EmptyPacket;
@@ -21,9 +21,9 @@ import dev.Hilligans.Networking.Other.Pipelines.MinecraftPacketDecoder;
 import dev.Hilligans.Networking.Other.Pipelines.MinecraftPacketEncoder;
 import dev.Hilligans.Networking.Packets.Handshake.CHandshakePacket;
 import dev.Hilligans.Networking.Packets.Login.*;
-import dev.Hilligans.Networking.Packets.Play.Client.CKeepAlivePacket;
+import dev.Hilligans.Networking.Packets.Play.Client.CKeepAlive;
 import dev.Hilligans.Networking.Packets.Play.Client.CPlayerPosition;
-import dev.Hilligans.Networking.Packets.Play.Client.CSendChatMessage;
+import dev.Hilligans.Networking.Packets.Play.Client.CChatMessage;
 import dev.Hilligans.Networking.Packets.Play.Client.CTeleportConfirm;
 import dev.Hilligans.Networking.Packets.Play.Server.*;
 import dev.Hilligans.Networking.Packets.Status.CQueryPacket;
@@ -34,20 +34,12 @@ import io.netty.channel.socket.SocketChannel;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.lwjgl.opengl.GL30;
-import org.lwjgl.stb.STBImage;
-import org.lwjgl.stb.STBImageWrite;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.awt.image.Raster;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.nio.ByteBuffer;
 
 import static org.lwjgl.opengl.GL11.*;
-import static org.lwjgl.opengl.GL30.*;
-import static org.lwjgl.opengl.GL30C.glBindFramebuffer;
 
 @Mod(modID = "MinecraftOurcraft")
 public class Main {
@@ -112,7 +104,7 @@ public class Main {
             }
             return block;
         };
-        modContent.gameInstance.EVENT_BUS.register(ClientSendMessageEvent.class, clientSendMessageEvent -> network.sendPacket(new CSendChatMessage(clientSendMessageEvent.message)));
+        modContent.gameInstance.EVENT_BUS.register(ClientSendMessageEvent.class, clientSendMessageEvent -> network.sendPacket(new CChatMessage(clientSendMessageEvent.message)));
         modContent.gameInstance.EVENT_BUS.register(RenderWorldEvent.class,this::draw);
         modContent.gameInstance.EVENT_BUS.register(ClientStartRenderingEvent.class,this::event);
         modContent.gameInstance.EVENT_BUS.register(RenderPreEvent.class,this::pre);
@@ -141,10 +133,12 @@ public class Main {
             modContent.registerPacket("MinecraftPlayClientBound",x, EmptyPacket::new);
         }
 
-        modContent.registerPacket("MinecraftPlayServerBound",0, CTeleportConfirm::new);
-        modContent.registerPacket("MinecraftPlayServerBound",3, CSendChatMessage::new);
-        modContent.registerPacket("MinecraftPlayServerBound",16, CKeepAlivePacket::new);
-        modContent.registerPacket("MinecraftPlayServerBound",18,CPlayerPosition::new);
+        PacketList.putIntoProtocol("MinecraftPlayServerBound",protocolVersion.protocol.get("MinecraftPlayServerBound"),modContent);
+
+     //   modContent.registerPacket("MinecraftPlayServerBound",0, CTeleportConfirm::new);
+     //   modContent.registerPacket("MinecraftPlayServerBound",3, CChatMessage::new);
+   ////     modContent.registerPacket("MinecraftPlayServerBound",16, CKeepAlive::new);
+    //    modContent.registerPacket("MinecraftPlayServerBound",18,CPlayerPosition::new);
 
         BlockModelParser.getBlockModel(new JSONObject(WorldLoader.readString("/minecraft/models/block/button.json")));
     }
@@ -243,5 +237,9 @@ public class Main {
             });
             return stringBuilder.toString().trim();
         }
+    }
+
+    static {
+        PacketList.registerPackets();
     }
 }

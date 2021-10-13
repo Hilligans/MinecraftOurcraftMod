@@ -3,19 +3,19 @@ package dev.Hilligans.Networking.Packets.Play.Client;
 import dev.Hilligans.ourcraft.Network.PacketBase;
 import dev.Hilligans.ourcraft.Network.PacketData;
 
-public class CSendChatMessage extends PacketBase {
+public class CSetDifficulty extends PacketBase {
 
-    public String message;
+    public byte difficulty;
 
-    public CSendChatMessage() {}
-
-    public CSendChatMessage(String message) {
-        this.message = message;
+    public CSetDifficulty(byte difficulty) {
+        this.difficulty = difficulty;
     }
+
+    public CSetDifficulty() {}
 
     @Override
     public void encode(PacketData packetData) {
-        packetData.writeUTF8(message);
+        packetData.writeByte(difficulty);
     }
 
     @Override

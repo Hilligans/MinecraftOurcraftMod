@@ -2,25 +2,25 @@ package dev.Hilligans.Networking.Packets.Play.Client;
 
 import dev.Hilligans.ourcraft.Network.PacketBase;
 import dev.Hilligans.ourcraft.Network.PacketData;
-import dev.Hilligans.Main;
 
-public class CKeepAlivePacket extends PacketBase {
+public class CUseItem extends PacketBase {
 
-    long id;
+    public int hand;
 
-    public CKeepAlivePacket() {}
-
-    public CKeepAlivePacket(long id) {
-        this.id = id;
+    public CUseItem(int hand) {
+        this.hand = hand;
     }
+
+    public CUseItem() {}
 
     @Override
     public void encode(PacketData packetData) {
-        packetData.writeLong(id);
+        packetData.writeVarInt(hand);
     }
 
     @Override
     public void decode(PacketData packetData) {
+
     }
 
     @Override

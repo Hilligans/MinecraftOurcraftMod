@@ -5,8 +5,7 @@ import dev.Hilligans.ourcraft.Network.PacketBase;
 import dev.Hilligans.ourcraft.Network.PacketData;
 import dev.Hilligans.ourcraft.Util.ConsoleReader;
 import dev.Hilligans.Main;
-import dev.Hilligans.Networking.Packets.Play.Client.CSendChatMessage;
-import dev.Hilligans.Networking.Packets.Play.Server.SSendChatMessage;
+import dev.Hilligans.Networking.Packets.Play.Client.CChatMessage;
 
 public class SLoginSuccess extends PacketBase {
     @Override
@@ -23,7 +22,7 @@ public class SLoginSuccess extends PacketBase {
         ConsoleReader consoleReader = new ConsoleReader(new ConsoleReader.ConsoleEvent() {
             @Override
             public void invoke(String s) {
-                Main.network.sendPacket(new CSendChatMessage(s));
+                Main.network.sendPacket(new CChatMessage(s));
             }
         });
 

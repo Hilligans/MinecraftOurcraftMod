@@ -8,12 +8,12 @@ import java.util.HashMap;
 
 public class ProtocolVersion {
 
-    public HashMap<String, Integer> protocol = new HashMap<>();
+    public HashMap<String,JSONObject> protocol = new HashMap<>();
 
     public ProtocolVersion(String path) {
         JSONObject jsonObject = new JSONObject(Main.readString(path));
         for(String string : jsonObject.keySet()) {
-            protocol.put(string,jsonObject.getInt(string));
+            protocol.put(string,jsonObject.getJSONObject(string));
         }
     }
 
