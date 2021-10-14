@@ -4,17 +4,15 @@ import dev.Hilligans.ourcraft.Network.PacketBase;
 import dev.Hilligans.ourcraft.Network.PacketData;
 
 import java.util.UUID;
-import java.util.zip.Deflater;
 
-public class SSpawnEntity extends PacketBase {
+public class SSpawnPlayer extends PacketBase {
 
     public int id;
     public UUID uuid;
-    public int type;
-    public double x,y,z;
+    public double x;
+    public double y;
+    public double z;
     public byte pitch,yaw;
-    public int data;
-    public short velX,velY,velZ;
 
     @Override
     public void encode(PacketData packetData) {
@@ -25,19 +23,15 @@ public class SSpawnEntity extends PacketBase {
     public void decode(PacketData packetData) {
         id = packetData.readVarInt();
         uuid = UUID.nameUUIDFromBytes(packetData.readBytes(16));
-        type = packetData.readVarInt();
         x = packetData.readDouble();
         y = packetData.readDouble();
         z = packetData.readDouble();
         yaw = packetData.readByte();
         pitch = packetData.readByte();
-        data = packetData.readInt();
-        velX = packetData.readShort();
-        velY = packetData.readShort();
-        velZ = packetData.readShort();
     }
 
     @Override
     public void handle() {
+
     }
 }

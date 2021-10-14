@@ -1,6 +1,6 @@
 package dev.Hilligans.Networking.Packets.Play.Client;
 
-import dev.Hilligans.Util.MCSlot;
+import dev.Hilligans.ourcraft.Item.ItemStack;
 import dev.Hilligans.ourcraft.Network.PacketBase;
 import dev.Hilligans.ourcraft.Network.PacketData;
 
@@ -11,7 +11,7 @@ public class CClickWindow extends PacketBase {
     public byte button;
     public short actionNumber;
     public int mode;
-    public MCSlot slotContent = new MCSlot();
+    public ItemStack slotContent = new ItemStack(null,0);
 
     @Override
     public void encode(PacketData packetData) {
@@ -20,7 +20,7 @@ public class CClickWindow extends PacketBase {
         packetData.writeByte(button);
         packetData.writeShort(actionNumber);
         packetData.writeVarInt(mode);
-        slotContent.put(packetData);
+        packetData.writeItemStack(slotContent);
     }
 
     @Override

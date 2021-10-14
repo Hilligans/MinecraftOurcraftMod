@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.BitSet;
 
-public class SChunkDataPacket extends PacketBase {
+public class SChunkData extends PacketBase {
 
     public int chunkX;
     public int chunkZ;
@@ -58,8 +58,7 @@ public class SChunkDataPacket extends PacketBase {
                     }
                     byteArray.readShort();
                     bitsPer = byteArray.readByte();
-                    BlockPalette blockPalette = null;
-                    blockPalette = new BlockPalette();
+                    BlockPalette blockPalette = new BlockPalette();
                     blockPalette.read(byteArray);
                     if (bitsPer > 8) {
                         bitsPer = 15;
@@ -71,7 +70,6 @@ public class SChunkDataPacket extends PacketBase {
                     for (int x = 0; x < blockData.length; x++) {
                         blockData[x] = byteArray.readLong();
                     }
-                    int x = 0;
                     int[] blocks = new int[16 * 16 * 16];
 
                     int longIndex = 0;
@@ -99,15 +97,11 @@ public class SChunkDataPacket extends PacketBase {
                             chunk = new DriveChunk(chunkX, chunkZ,ClientMain.getClient().clientWorld, ChunkProcessor::process);
                         }
                     }
-                    for (x = 0; x < 16; x++) {
+                    for (int x = 0; x < 16; x++) {
                         for (int y = 0; y < 16; y++) {
                             for (int z = 0; z < 16; z++) {
                                 int id;
-                                if (blockPalette == null) {
-                                    id = blocks[y << 8 | z << 4 | x];
-                                } else {
-                                    id = blockPalette.vals[blocks[y << 8 | z << 4 | x]];
-                                }
+                                id = blockPalette.vals[blocks[y << 8 | z << 4 | x]];
                                 chunk.setBlockState(x, y + a * 16, z, BlockManager.blocks.getOrDefault(id, Blocks.BEDROCK).getStateWithData((short) BlockManager.blockStates.getOrDefault(id,0)));
                             }
                         }
@@ -121,8 +115,6 @@ public class SChunkDataPacket extends PacketBase {
                 }
             }
         }
-
-
     }
 
     static int chunkCount = 0;

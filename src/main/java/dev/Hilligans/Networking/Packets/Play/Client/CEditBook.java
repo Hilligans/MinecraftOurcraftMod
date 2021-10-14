@@ -1,17 +1,17 @@
 package dev.Hilligans.Networking.Packets.Play.Client;
 
-import dev.Hilligans.Util.MCSlot;
+import dev.Hilligans.ourcraft.Item.ItemStack;
 import dev.Hilligans.ourcraft.Network.PacketBase;
 import dev.Hilligans.ourcraft.Network.PacketData;
 
 public class CEditBook extends PacketBase {
 
-    public MCSlot saveSlot;
+    public ItemStack saveSlot;
     public boolean signing;
     public int hand;
 
     public CEditBook(boolean signing, int hand) {
-        saveSlot = new MCSlot();
+        this.saveSlot = new ItemStack(null,0);
         this.signing = signing;
         this.hand = hand;
     }
@@ -20,7 +20,7 @@ public class CEditBook extends PacketBase {
 
     @Override
     public void encode(PacketData packetData) {
-        saveSlot.put(packetData);
+        packetData.writeItemStack(saveSlot);
         packetData.writeBoolean(signing);
         packetData.writeVarInt(hand);
     }

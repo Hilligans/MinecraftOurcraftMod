@@ -2,12 +2,12 @@ package dev.Hilligans.Networking.Packets.Play.Server;
 
 import dev.Hilligans.ourcraft.Network.PacketBase;
 import dev.Hilligans.ourcraft.Network.PacketData;
-import dev.Hilligans.Main;
-import dev.Hilligans.Networking.Packets.Play.Client.CKeepAlive;
 
-public class SKeepAlivePacket extends PacketBase {
+public class SSetCooldown extends PacketBase {
 
-    long id;
+    public int itemID;
+    public int cooldown;
+
     @Override
     public void encode(PacketData packetData) {
 
@@ -15,11 +15,12 @@ public class SKeepAlivePacket extends PacketBase {
 
     @Override
     public void decode(PacketData packetData) {
-        id = packetData.readLong();
+        itemID = packetData.readVarInt();
+        cooldown = packetData.readVarInt();
     }
 
     @Override
     public void handle() {
-        Main.network.sendPacket(new CKeepAlive(id));
+
     }
 }

@@ -1,6 +1,5 @@
 package dev.Hilligans.Networking.Packets.Play.Client;
 
-import dev.Hilligans.Util.MCSlot;
 import dev.Hilligans.ourcraft.Network.PacketBase;
 import dev.Hilligans.ourcraft.Network.PacketData;
 

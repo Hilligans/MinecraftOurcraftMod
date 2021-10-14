@@ -21,10 +21,8 @@ import dev.Hilligans.Networking.Other.Pipelines.MinecraftPacketDecoder;
 import dev.Hilligans.Networking.Other.Pipelines.MinecraftPacketEncoder;
 import dev.Hilligans.Networking.Packets.Handshake.CHandshakePacket;
 import dev.Hilligans.Networking.Packets.Login.*;
-import dev.Hilligans.Networking.Packets.Play.Client.CKeepAlive;
 import dev.Hilligans.Networking.Packets.Play.Client.CPlayerPosition;
 import dev.Hilligans.Networking.Packets.Play.Client.CChatMessage;
-import dev.Hilligans.Networking.Packets.Play.Client.CTeleportConfirm;
 import dev.Hilligans.Networking.Packets.Play.Server.*;
 import dev.Hilligans.Networking.Packets.Status.CQueryPacket;
 import dev.Hilligans.Networking.Packets.Status.SServerList;
@@ -122,11 +120,12 @@ public class Main {
         modContent.registerPacket("MinecraftLoginClientBound",3, SSetCompression::new);
         modContent.registerPacket("MinecraftLoginClientBound",4, SLoginPluginRequest::new);
 
+        PacketList.putIntoProtocol("MinecraftPlayClientBound",protocolVersion.protocol.get("MinecraftPlayClientBound"),modContent);
 
-        modContent.registerPacket("MinecraftPlayClientBound",14, SSendChatMessage::new);
+        modContent.registerPacket("MinecraftPlayClientBound",14, SChatMessage::new);
         modContent.registerPacket("MinecraftPlayClientBound",25, SDisconnectPlayPacket::new);
-        modContent.registerPacket("MinecraftPlayClientBound",31, SKeepAlivePacket::new);
-        modContent.registerPacket("MinecraftPlayClientBound",32, SChunkDataPacket::new);
+        modContent.registerPacket("MinecraftPlayClientBound",31, SKeepAlive::new);
+        modContent.registerPacket("MinecraftPlayClientBound",32, SChunkData::new);
         modContent.registerPacket("MinecraftPlayClientBound",52, SPlayerPositionAndLookPacket::new);
         modContent.registerPacket("MinecraftPlayClientBound",72,SUpdateViewPosition::new);
         for(int x = 0; x < 200; x++) {

@@ -9,7 +9,7 @@ import org.json.JSONObject;
 
 import java.util.UUID;
 
-public class SSendChatMessage extends PacketBase {
+public class SChatMessage extends PacketBase {
 
     public String data;
 

@@ -1,6 +1,7 @@
 package dev.Hilligans.Networking.Packets;
 
 import dev.Hilligans.Networking.Packets.Play.Client.*;
+import dev.Hilligans.Networking.Packets.Play.Server.*;
 import dev.Hilligans.ourcraft.ModHandler.Content.ModContent;
 import dev.Hilligans.ourcraft.Network.PacketBase;
 import dev.Hilligans.ourcraft.Network.Protocol;
@@ -18,6 +19,7 @@ public class PacketList {
     }
 
     public static void registerPackets() {
+        //Server bound play packets
         put("CTeleportConfirm", CTeleportConfirm::new);
         put("CQueryBlockNBT", CQueryBlockNBT::new);
         put("CSetDifficulty", CSetDifficulty::new);
@@ -66,6 +68,51 @@ public class PacketList {
         put("CSpectate", CSpectate::new);
         put("CPlayerBlockPlacement", CPlayerBlockPlacement::new);
         put("CUseItem", CUseItem::new);
+
+        //Client bound play packets
+        put("SSpawnEntity", SSpawnEntity::new);
+        put("SSpawnExperienceOrb", SSpawnExperienceOrb::new);
+        put("SSpawnLivingEntity", SSpawnLivingEntity::new);
+        put("SSpawnPainting", SSpawnPainting::new);
+        put("SSpawnPlayer", SSpawnPlayer::new);
+        put("SEntityAnimation", SEntityAnimation::new);
+        put("SStatistics", SStatistics::new);
+        put("SAcknowledgePlayerDigging", SAcknowledgePlayerDigging::new);
+        put("SBlockBreakAnimation", SBlockBreakAnimation::new);
+        put("SBlockEntityData", SBlockEntityData::new);
+        put("SBlockAction", SBlockAction::new);
+        put("SBlockChange", SBlockChange::new);
+        put("SBossBar", SBossBar::new);
+        put("SServerDifficulty", SServerDifficulty::new);
+        put("SChatMessage", SChatMessage::new);
+        put("STabComplete", STabComplete::new);
+        put("SDeclareCommands", SDeclareCommands::new);
+        put("SWindowConfirmation", SWindowConfirmation::new);
+        put("SCloseWindow", SCloseWindow::new);
+        put("SWindowItems", SWindowItems::new);
+        put("SWindowProperty", SWindowProperty::new);
+        put("SSetSlot", SSetSlot::new);
+        put("SSetCooldown", SSetCooldown::new);
+        put("SPluginMessage", SPluginMessage::new);
+        put("SNamedSoundEffect", SNamedSoundEffect::new);
+        put("SDisconnect", SDisconnect::new);
+        put("SEntityStatus", SEntityStatus::new);
+        put("SExplosion", SExplosion::new);
+        put("SUnloadChunk", SUnloadChunk::new);
+        put("SChangeGameState", SChangeGameState::new);
+        put("SOpenHorseWindow", SOpenHorseWindow::new);
+        put("SKeepAlive", SKeepAlive::new);
+        put("SChunkData",SChunkData::new);
+        put("SEffect", SEffect::new);
+        put("SParticle", SParticle::new);
+        put("SUpdateLight", SUpdateLight::new);
+        put("SJoinGame", SJoinGame::new);
+        put("SMapData", SMapData::new);
+        put("STradeList", STradeList::new);
+        put("SEntityPosition", SEntityPosition::new);
+        put("SEntityPositionAndRotation", SEntityPositionAndRotation::new);
+
+
     }
 
     public static void putIntoProtocol(String protocolName, JSONObject jsonObject, ModContent modContent) {
