@@ -2,8 +2,8 @@ package dev.Hilligans.Networking.Packets.Play.Server;
 
 import dev.Hilligans.ourcraft.Network.PacketBase;
 import dev.Hilligans.ourcraft.Network.PacketData;
+import dev.Hilligans.ourcraft.Util.UUID;
 
-import java.util.UUID;
 import java.util.zip.Deflater;
 
 public class SSpawnEntity extends PacketBase {
@@ -24,7 +24,7 @@ public class SSpawnEntity extends PacketBase {
     @Override
     public void decode(PacketData packetData) {
         id = packetData.readVarInt();
-        uuid = UUID.nameUUIDFromBytes(packetData.readBytes(16));
+        uuid = new UUID(packetData);
         type = packetData.readVarInt();
         x = packetData.readDouble();
         y = packetData.readDouble();

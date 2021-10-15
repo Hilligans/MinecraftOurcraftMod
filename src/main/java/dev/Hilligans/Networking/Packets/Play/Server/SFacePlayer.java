@@ -2,17 +2,16 @@ package dev.Hilligans.Networking.Packets.Play.Server;
 
 import dev.Hilligans.ourcraft.Network.PacketBase;
 import dev.Hilligans.ourcraft.Network.PacketData;
-import dev.Hilligans.ourcraft.Util.UUID;
 
+public class SFacePlayer extends PacketBase {
 
-public class SSpawnPlayer extends PacketBase {
-
-    public int id;
-    public UUID uuid;
+    public int feetEyes;
     public double x;
     public double y;
     public double z;
-    public byte pitch,yaw;
+    public boolean isEntity;
+    public int entityID;
+    public int entityFeetEyes;
 
     @Override
     public void encode(PacketData packetData) {
@@ -21,13 +20,15 @@ public class SSpawnPlayer extends PacketBase {
 
     @Override
     public void decode(PacketData packetData) {
-        id = packetData.readVarInt();
-        uuid = new UUID(packetData);
+        feetEyes = packetData.readVarInt();
         x = packetData.readDouble();
         y = packetData.readDouble();
         z = packetData.readDouble();
-        yaw = packetData.readByte();
-        pitch = packetData.readByte();
+        isEntity = packetData.readBoolean();
+        if(isEntity) {
+            entityID = packetData.readVarInt();
+            entityFeetEyes = packetData.readVarInt();
+        }
     }
 
     @Override

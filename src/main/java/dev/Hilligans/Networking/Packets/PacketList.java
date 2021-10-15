@@ -111,7 +111,57 @@ public class PacketList {
         put("STradeList", STradeList::new);
         put("SEntityPosition", SEntityPosition::new);
         put("SEntityPositionAndRotation", SEntityPositionAndRotation::new);
-
+        put("SEntityRotation", SEntityRotation::new);
+        put("SEntityMovement", SEntityMovement::new);
+        put("SVehicleMove", SVehicleMove::new);
+        put("SOpenBook", SOpenBook::new);
+        put("SOpenWindow", SOpenWindow::new);
+        put("SOpenSignEditor", SOpenSignEditor::new);
+        put("SCraftRecipeResponse", SCraftRecipeResponse::new);
+        put("SPlayerAbilities", SPlayerAbilities::new);
+        put("SCombatEvent", SCombatEvent::new);
+        put("SPlayerInfo", SPlayerInfo::new);
+        put("SFacePlayer", SFacePlayer::new);
+        put("SPlayerPositionAndLook", SPlayerPositionAndLook::new);
+        put("SUnlockRecipes", SUnlockRecipes::new);
+        put("SDestroyEntities", SDestroyEntities::new);
+        put("SRemoveEntityEffect", SRemoveEntityEffect::new);
+        put("SResourcePackSend", SResourcePackSend::new);
+        put("SRespawn", SRespawn::new);
+        put("SEntityHeadLock", SEntityHeadLock::new);
+        put("SMultiBlockChange", SMultiBlockChange::new);
+        put("SSelectAdvancementTab", SSelectAdvancementTab::new);
+        put("SWorldBorder", SWorldBorder::new);
+        put("SCamera", SCamera::new);
+        put("SHeldItemChange", SHeldItemChange::new);
+        put("SUpdateViewPosition",SUpdateViewPosition::new);
+        put("SUpdateViewDistance", SUpdateViewDistance::new);
+        put("SSpawnPosition", SSpawnPosition::new);
+        put("SDisplayScoreboard", SDisplayScoreboard::new);
+        put("SEntityMetadata",SEntityMetadata::new);
+        put("SAttachEntity", SAttachEntity::new);
+        put("SEntityVelocity", SEntityVelocity::new);
+        put("SEntityEquipment", SEntityEquipment::new);
+        put("SSetExperience", SSetExperience::new);
+        put("SUpdateHealth", SUpdateHealth::new);
+        put("SScoreboardObjective", SScoreboardObjective::new);
+        put("SSetPassengers", SSetPassengers::new);
+        put("STeams", STeams::new);
+        put("SUpdateScore", SUpdateScore::new);
+        put("STimeUpdate", STimeUpdate::new);
+        put("STitle", STitle::new);
+        put("SEntitySoundEffect", SEntitySoundEffect::new);
+        put("SSoundEffect", SSoundEffect::new);
+        put("SStopSound", SStopSound::new);
+        put("SPlayerListHeaderAndFooter", SPlayerListHeaderAndFooter::new);
+        put("SNBTQueryResponse", SNBTQueryResponse::new);
+        put("SCollectItem", SCollectItem::new);
+        put("SEntityTeleport" ,SEntityTeleport::new);
+        put("SAdvancements", SAdvancements::new);
+        put("SEntityProperties", SEntityProperties::new);
+        put("SEntityEffect", SEntityEffect::new);
+        put("SDeclareRecipes", SDeclareRecipes::new);
+        put("STags", STags::new);
 
     }
 

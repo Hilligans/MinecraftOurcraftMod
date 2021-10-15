@@ -2,13 +2,11 @@ package dev.Hilligans.Networking.Packets.Play.Server;
 
 import dev.Hilligans.ourcraft.Network.PacketBase;
 import dev.Hilligans.ourcraft.Network.PacketData;
-import dev.Hilligans.ourcraft.Util.UUID;
 
+public class SCraftRecipeResponse extends PacketBase {
 
-public class SBossBar extends PacketBase {
-
-    public UUID uuid;
-    public int action;
+    public byte windowID;
+    public String recipe;
 
     @Override
     public void encode(PacketData packetData) {
@@ -17,8 +15,8 @@ public class SBossBar extends PacketBase {
 
     @Override
     public void decode(PacketData packetData) {
-        uuid = new UUID(packetData);
-        action = packetData.readVarInt();
+        windowID = packetData.readByte();
+        recipe = packetData.readUTF8();
     }
 
     @Override

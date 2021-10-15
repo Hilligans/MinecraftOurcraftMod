@@ -2,13 +2,13 @@ package dev.Hilligans.Networking.Packets.Play.Server;
 
 import dev.Hilligans.ourcraft.Network.PacketBase;
 import dev.Hilligans.ourcraft.Network.PacketData;
-import dev.Hilligans.ourcraft.Util.UUID;
 
+public class STeams extends PacketBase {
 
-public class SBossBar extends PacketBase {
+    //TODO finish
+    public String name;
+    public byte mode;
 
-    public UUID uuid;
-    public int action;
 
     @Override
     public void encode(PacketData packetData) {
@@ -17,8 +17,8 @@ public class SBossBar extends PacketBase {
 
     @Override
     public void decode(PacketData packetData) {
-        uuid = new UUID(packetData);
-        action = packetData.readVarInt();
+        name = packetData.readUTF8();
+        mode = packetData.readByte();
     }
 
     @Override

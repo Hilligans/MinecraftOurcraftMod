@@ -2,13 +2,14 @@ package dev.Hilligans.Networking.Packets.Play.Server;
 
 import dev.Hilligans.ourcraft.Network.PacketBase;
 import dev.Hilligans.ourcraft.Network.PacketData;
-import dev.Hilligans.ourcraft.Util.UUID;
 
+public class SVehicleMove extends PacketBase {
 
-public class SBossBar extends PacketBase {
-
-    public UUID uuid;
-    public int action;
+    public double x;
+    public double y;
+    public double z;
+    public float yaw;
+    public float pitch;
 
     @Override
     public void encode(PacketData packetData) {
@@ -17,8 +18,11 @@ public class SBossBar extends PacketBase {
 
     @Override
     public void decode(PacketData packetData) {
-        uuid = new UUID(packetData);
-        action = packetData.readVarInt();
+        x = packetData.readDouble();
+        y = packetData.readDouble();
+        z = packetData.readDouble();
+        yaw = packetData.readFloat();
+        pitch = packetData.readFloat();
     }
 
     @Override

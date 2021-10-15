@@ -3,8 +3,7 @@ package dev.Hilligans.Networking.Packets.Play.Server;
 import dev.Hilligans.ourcraft.Data.Other.EightBytePosition;
 import dev.Hilligans.ourcraft.Network.PacketBase;
 import dev.Hilligans.ourcraft.Network.PacketData;
-
-import java.util.UUID;
+import dev.Hilligans.ourcraft.Util.UUID;
 
 public class SSpawnPainting extends PacketBase {
 
@@ -22,7 +21,7 @@ public class SSpawnPainting extends PacketBase {
     @Override
     public void decode(PacketData packetData) {
         id = packetData.readVarInt();
-        uuid = UUID.nameUUIDFromBytes(packetData.readBytes(16));
+        uuid = new UUID(packetData);
         paintingType = packetData.readVarInt();
         position = packetData.readEightBytePosition();
         direction = packetData.readByte();

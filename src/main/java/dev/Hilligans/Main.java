@@ -120,7 +120,8 @@ public class Main {
         modContent.registerPacket("MinecraftLoginClientBound",3, SSetCompression::new);
         modContent.registerPacket("MinecraftLoginClientBound",4, SLoginPluginRequest::new);
 
-        PacketList.putIntoProtocol("MinecraftPlayClientBound",protocolVersion.protocol.get("MinecraftPlayClientBound"),modContent);
+        //PacketList.putIntoProtocol("MinecraftPlayClientBound",protocolVersion.protocol.get("MinecraftPlayClientBound"),modContent);
+
 
         modContent.registerPacket("MinecraftPlayClientBound",14, SChatMessage::new);
         modContent.registerPacket("MinecraftPlayClientBound",25, SDisconnectPlayPacket::new);
@@ -131,6 +132,8 @@ public class Main {
         for(int x = 0; x < 200; x++) {
             modContent.registerPacket("MinecraftPlayClientBound",x, EmptyPacket::new);
         }
+
+
 
         PacketList.putIntoProtocol("MinecraftPlayServerBound",protocolVersion.protocol.get("MinecraftPlayServerBound"),modContent);
 

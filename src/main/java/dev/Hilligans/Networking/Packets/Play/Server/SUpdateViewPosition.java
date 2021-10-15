@@ -4,6 +4,10 @@ import dev.Hilligans.ourcraft.Network.PacketBase;
 import dev.Hilligans.ourcraft.Network.PacketData;
 
 public class SUpdateViewPosition extends PacketBase {
+
+    public int chunkX;
+    public int chunkZ;
+
     @Override
     public void encode(PacketData packetData) {
 
@@ -11,7 +15,8 @@ public class SUpdateViewPosition extends PacketBase {
 
     @Override
     public void decode(PacketData packetData) {
-        System.out.println("ChunkX " + packetData.readVarInt());
+        chunkX = packetData.readVarInt();
+        chunkZ = packetData.readVarInt();
     }
 
     @Override

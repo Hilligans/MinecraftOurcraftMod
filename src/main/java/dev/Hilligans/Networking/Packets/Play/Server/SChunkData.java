@@ -94,7 +94,8 @@ public class SChunkData extends PacketBase {
                             chunkCount++;
                             chunk = new Chunk(chunkX, chunkZ, ClientMain.getClient().clientWorld);
                         } else {
-                            chunk = new DriveChunk(chunkX, chunkZ,ClientMain.getClient().clientWorld, ChunkProcessor::process);
+                            chunk = new Chunk(chunkX, chunkZ, ClientMain.getClient().clientWorld);
+                            //chunk = new DriveChunk(chunkX, chunkZ,ClientMain.getClient().clientWorld, ChunkProcessor::process);
                         }
                     }
                     for (int x = 0; x < 16; x++) {

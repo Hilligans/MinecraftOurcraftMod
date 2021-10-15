@@ -2,13 +2,12 @@ package dev.Hilligans.Networking.Packets.Play.Server;
 
 import dev.Hilligans.ourcraft.Network.PacketBase;
 import dev.Hilligans.ourcraft.Network.PacketData;
-import dev.Hilligans.ourcraft.Util.UUID;
 
+public class SStopSound extends PacketBase {
 
-public class SBossBar extends PacketBase {
-
-    public UUID uuid;
-    public int action;
+    public byte flags;
+    public int source;
+    public String sound;
 
     @Override
     public void encode(PacketData packetData) {
@@ -17,8 +16,13 @@ public class SBossBar extends PacketBase {
 
     @Override
     public void decode(PacketData packetData) {
-        uuid = new UUID(packetData);
-        action = packetData.readVarInt();
+        flags = packetData.readByte();
+        if((flags & 0x1) != 0) {
+            source = packetData.readVarInt();
+        }
+        if((flags & 0x2) != 0) {
+            sound = packetData.readUTF8();
+        }
     }
 
     @Override

@@ -7,8 +7,6 @@ import dev.Hilligans.ourcraft.Network.PacketData;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.util.UUID;
-
 public class SChatMessage extends PacketBase {
 
     public String data;

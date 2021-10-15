@@ -2,13 +2,12 @@ package dev.Hilligans.Networking.Packets.Play.Server;
 
 import dev.Hilligans.ourcraft.Network.PacketBase;
 import dev.Hilligans.ourcraft.Network.PacketData;
-import dev.Hilligans.ourcraft.Util.UUID;
 
+public class SMultiBlockChange extends PacketBase {
 
-public class SBossBar extends PacketBase {
-
-    public UUID uuid;
-    public int action;
+    public long chunkSectionPosition;
+    public boolean trustEdgesInverse;
+    public long[] blockChanges;
 
     @Override
     public void encode(PacketData packetData) {
@@ -17,8 +16,9 @@ public class SBossBar extends PacketBase {
 
     @Override
     public void decode(PacketData packetData) {
-        uuid = new UUID(packetData);
-        action = packetData.readVarInt();
+        chunkSectionPosition = packetData.readLong();
+        trustEdgesInverse = packetData.readBoolean();
+        blockChanges = packetData.readVarLongs(packetData.readVarInt());
     }
 
     @Override

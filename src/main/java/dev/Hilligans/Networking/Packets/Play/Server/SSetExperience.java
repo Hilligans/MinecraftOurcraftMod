@@ -2,13 +2,12 @@ package dev.Hilligans.Networking.Packets.Play.Server;
 
 import dev.Hilligans.ourcraft.Network.PacketBase;
 import dev.Hilligans.ourcraft.Network.PacketData;
-import dev.Hilligans.ourcraft.Util.UUID;
 
+public class SSetExperience extends PacketBase {
 
-public class SBossBar extends PacketBase {
-
-    public UUID uuid;
-    public int action;
+    public float experienceBar;
+    public int level;
+    public int totalXP;
 
     @Override
     public void encode(PacketData packetData) {
@@ -17,8 +16,9 @@ public class SBossBar extends PacketBase {
 
     @Override
     public void decode(PacketData packetData) {
-        uuid = new UUID(packetData);
-        action = packetData.readVarInt();
+        experienceBar = packetData.readFloat();
+        level = packetData.readVarInt();
+        totalXP = packetData.readVarInt();
     }
 
     @Override
