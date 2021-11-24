@@ -1,5 +1,7 @@
 package dev.Hilligans.Networking.Packets.Play.Server;
 
+import dev.Hilligans.Util.BlockManager;
+import dev.Hilligans.Util.BlockPalette;
 import dev.Hilligans.ourcraft.Block.Blocks;
 import dev.Hilligans.ourcraft.ClientMain;
 import dev.Hilligans.ourcraft.Network.PacketBase;
@@ -8,25 +10,14 @@ import dev.Hilligans.ourcraft.Ourcraft;
 import dev.Hilligans.ourcraft.Tag.CompoundNBTTag;
 import dev.Hilligans.ourcraft.Util.ByteArray;
 import dev.Hilligans.ourcraft.World.Chunk;
-import dev.Hilligans.ourcraft.World.DriveChunk;
-import dev.Hilligans.ourcraft.World.World;
-import dev.Hilligans.ourcraft.WorldSave.ChunkLoader;
-import dev.Hilligans.Main;
-import dev.Hilligans.Util.BlockManager;
-import dev.Hilligans.Util.BlockPalette;
-import dev.Hilligans.Util.ChunkProcessor;
-import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 
-import java.nio.ByteBuffer;
-import java.util.Arrays;
 import java.util.BitSet;
 
-public class SChunkData extends PacketBase {
+public class SChunkData755 extends PacketBase {
 
     public int chunkX;
     public int chunkZ;
-    public boolean fullChunk;
 
     @Override
     public void encode(PacketData packetData) {
@@ -38,27 +29,24 @@ public class SChunkData extends PacketBase {
         Ourcraft.EXECUTOR.submit(new Runnable() {
             @Override
             public void run() {
+                BitSet bitSet;
                 chunkX = packetData.readInt();
                 chunkZ = packetData.readInt();
-                fullChunk = packetData.readBoolean();
                 int bitMask = packetData.readVarInt();
-                int index = packetData.byteBuf.readerIndex();
+                bitSet = BitSet.valueOf(packetData.readLongs(bitMask));
                 CompoundNBTTag heightmap = packetData.readCompoundTag();
-                if(fullChunk) {
                     int count = packetData.readVarInt();
                     for(int x = 0; x < count; x++) {
                         packetData.readVarInt();
                     }
-                }
                 int dataSize = packetData.readVarInt();
                 byte[] bytes = packetData.readBytes(dataSize);
                 int bitsPer;
 
-                if(fullChunk) {
                     ByteArray byteArray = new ByteArray(Unpooled.wrappedBuffer(bytes));
                     for (int a = 0; a < 16; a++) {
                         try {
-                            if ((bitMask & (1 << a)) == 0) {
+                            if (!bitSet.get(a)) {
                                 continue;
                             }
                             byteArray.readShort();
@@ -113,7 +101,7 @@ public class SChunkData extends PacketBase {
                             ignored.printStackTrace();
                         }
                     }
-                }
+               // }
             }
         });
 

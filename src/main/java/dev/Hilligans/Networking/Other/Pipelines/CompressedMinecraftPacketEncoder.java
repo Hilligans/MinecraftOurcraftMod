@@ -1,5 +1,6 @@
 package dev.Hilligans.Networking.Other.Pipelines;
 
+import dev.Hilligans.Main;
 import dev.Hilligans.ourcraft.Network.PacketData;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -16,7 +17,9 @@ public class CompressedMinecraftPacketEncoder extends MinecraftPacketEncoder {
 
     @Override
     protected void encode(ChannelHandlerContext ctx, PacketData msg, ByteBuf out) throws Exception {
-
+        if(Main.debugPackets) {
+            System.out.println("C -> S " + msg.packetId);
+        }
         if(msg.size + getVarIntSize(msg.packetId) > 256) {
             try {
                 Deflater deflater = new Deflater();

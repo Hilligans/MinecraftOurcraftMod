@@ -3,10 +3,7 @@ package dev.Hilligans.Networking.Packets.Play.Server;
 import dev.Hilligans.ourcraft.Network.PacketBase;
 import dev.Hilligans.ourcraft.Network.PacketData;
 
-public class SDisconnect extends PacketBase {
-
-    public String chatMessage;
-
+public class SActionBar extends PacketBase {
     @Override
     public void encode(PacketData packetData) {
 
@@ -14,8 +11,7 @@ public class SDisconnect extends PacketBase {
 
     @Override
     public void decode(PacketData packetData) {
-        chatMessage = packetData.readUTF8();
-        System.out.println(chatMessage);
+
     }
 
     @Override

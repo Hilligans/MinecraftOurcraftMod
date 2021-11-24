@@ -1,5 +1,6 @@
 package dev.Hilligans.Networking.Other.Pipelines;
 
+import dev.Hilligans.Main;
 import dev.Hilligans.ourcraft.Network.PacketData;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
@@ -53,12 +54,18 @@ public class CompressedMinecraftPacketDecoder extends MinecraftPacketDecoder {
             packetData.packetId = (short) packetData.readVarInt();
            // System.out.println("In:" + packetData.packetId);
             packetData.ctx = ctx;
+            if(Main.debugPackets) {
+                System.out.println("S -> C " + packetData.packetId);
+            }
             out.add(packetData);
         } else {
             PacketData packetData = new PacketData(bytes);
             packetData.packetId = (short) packetData.readVarInt();
            // System.out.println("In:" + packetData.packetId);
             packetData.ctx = ctx;
+            if(Main.debugPackets) {
+                System.out.println("S -> C " + packetData.packetId);
+            }
             out.add(packetData);
         }
         in.markReaderIndex();

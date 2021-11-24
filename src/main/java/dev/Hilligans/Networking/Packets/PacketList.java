@@ -4,7 +4,6 @@ import dev.Hilligans.Networking.Packets.Play.Client.*;
 import dev.Hilligans.Networking.Packets.Play.Server.*;
 import dev.Hilligans.ourcraft.ModHandler.Content.ModContent;
 import dev.Hilligans.ourcraft.Network.PacketBase;
-import dev.Hilligans.ourcraft.Network.Protocol;
 import org.json.JSONObject;
 
 import java.util.HashMap;
@@ -68,6 +67,8 @@ public class PacketList {
         put("CSpectate", CSpectate::new);
         put("CPlayerBlockPlacement", CPlayerBlockPlacement::new);
         put("CUseItem", CUseItem::new);
+
+        put("CSteerVehicle", CSteerVehicle::new);
 
         //Client bound play packets
         put("SSpawnEntity", SSpawnEntity::new);
@@ -162,6 +163,26 @@ public class PacketList {
         put("SEntityEffect", SEntityEffect::new);
         put("SDeclareRecipes", SDeclareRecipes::new);
         put("STags", STags::new);
+
+        put("SSculkVibrationSignal", SSculkVibrationSignal::new);
+        put("SWorldBorderWarningReach", SWorldBorderWarningReach::new);
+        put("STitleTimes", STitleTimes::new);
+        put("SDeathCombatEvent",SDeathCombatEvent::new);
+        put("STitleText",STitleText::new);
+        put("SInitializeWorldBorder", SInitializeWorldBorder::new);
+        put("SEndCombatEvent", SEndCombatEvent::new);
+        put("SSetTitleSubTitle", SSetTitleSubTitle::new);
+        put("SWorldBorderSize", SWorldBorderSize::new);
+        put("SWorldBorderLerpSize", SWorldBorderLerpSize::new);
+        put("SEnterCombatEvent", SEnterCombatEvent::new);
+        put("SWorldBorderCenter", SWorldBorderCenter::new);
+        put("SWorldBorderWarningDelay", SWorldBorderWarningDelay::new);
+        put("SClearTitles", SClearTitles::new);
+        put("SActionBar", SActionBar::new);
+        put("SChunkData755", SChunkData755::new);
+        put("SWindowItems756", SWindowItems756::new);
+
+
 
     }
 

@@ -21,7 +21,6 @@ public class VersionTable {
         JSONArray jsonArray = jsonObject.getJSONArray("blocks");
         for(int x = 0; x < jsonArray.length(); x++) {
             blockNetworkIDs.computeIfAbsent(jsonArray.getString(x), a -> new ArrayList<>()).add(x);
-
         }
     }
 }

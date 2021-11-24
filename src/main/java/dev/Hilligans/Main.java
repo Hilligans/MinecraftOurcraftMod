@@ -42,12 +42,13 @@ import static org.lwjgl.opengl.GL11.*;
 @Mod(modID = "MinecraftOurcraft")
 public class Main {
 
-    //1.16.5
-    public static int version = 754 ;
+    //1.16.5 754
+    //1.17.1 756
+    public static int version = 756 ;
     public static ClientNetwork network;
     public static ModContent modContent;
 
-    public static String ip = "synergyserver.net";
+    public static String ip = "mc.openredstone.org";
     public static int port = 25565;
 
     public static String accessToken;
@@ -62,7 +63,13 @@ public class Main {
 
     public boolean takeScreenShot = false;
 
+    public static boolean debugPackets = false;
+
+    public String versionName = "1.17.1.json";
+
     public Main(ModContent modContent) {
+      //  JSONObject js = Util.parseVersionFile("/minecraft/1.17.1-blocks.json");
+      //  System.out.println(js.toString());
         Settings.worldName = ip;
 
         Thread thread = new Thread(() -> {
@@ -79,14 +86,14 @@ public class Main {
         ChunkProcessor.create();
 
         try {
-            versionTable = new VersionTable("/Versions/Blocks/1.16.5.json");
+            versionTable = new VersionTable("/Versions/Blocks/" + versionName);
         } catch (Exception e) {
-            versionTable = new VersionTable("Versions/Blocks/1.16.5.json");
+            versionTable = new VersionTable("Versions/Blocks/" + versionName);
         }
         try {
-            protocolVersion = new ProtocolVersion("/Versions/Protocols/1.16.5.json");
+            protocolVersion = new ProtocolVersion("/Versions/Protocols/" + versionName);
         } catch(Exception e) {
-            protocolVersion = new ProtocolVersion("Versions/Protocols/1.16.5.json");
+            protocolVersion = new ProtocolVersion("Versions/Protocols/" + versionName);
         }
 
         modContent.blockParser = (blockData, string) -> {
@@ -96,10 +103,13 @@ public class Main {
                 block.blockProperties.addTexture(textures.getString(x),x,textures.length());
             }
             int a = 0;
-            for(int x : versionTable.blockNetworkIDs.get(block.name)) {
-                BlockManager.register(x,a,block);
-                a++;
-            }
+            //System.out.println(block.name);
+            try {
+                for (int x : versionTable.blockNetworkIDs.get(block.name)) {
+                    BlockManager.register(x, a, block);
+                    a++;
+                }
+            } catch (Exception e) {}
             return block;
         };
         modContent.gameInstance.EVENT_BUS.register(ClientSendMessageEvent.class, clientSendMessageEvent -> network.sendPacket(new CChatMessage(clientSendMessageEvent.message)));
@@ -120,9 +130,10 @@ public class Main {
         modContent.registerPacket("MinecraftLoginClientBound",3, SSetCompression::new);
         modContent.registerPacket("MinecraftLoginClientBound",4, SLoginPluginRequest::new);
 
-        //PacketList.putIntoProtocol("MinecraftPlayClientBound",protocolVersion.protocol.get("MinecraftPlayClientBound"),modContent);
+        PacketList.putIntoProtocol("MinecraftPlayClientBound",protocolVersion.protocol.get("MinecraftPlayClientBound"),modContent);
 
 
+        /*
         modContent.registerPacket("MinecraftPlayClientBound",14, SChatMessage::new);
         modContent.registerPacket("MinecraftPlayClientBound",25, SDisconnectPlayPacket::new);
         modContent.registerPacket("MinecraftPlayClientBound",31, SKeepAlive::new);
@@ -132,6 +143,8 @@ public class Main {
         for(int x = 0; x < 200; x++) {
             modContent.registerPacket("MinecraftPlayClientBound",x, EmptyPacket::new);
         }
+
+         */
 
 
 
@@ -162,7 +175,7 @@ public class Main {
         Camera.moveSpeed = 0.1f;
         if(ClientMain.getClient().renderWorld ) {
             try {
-                if(System.currentTimeMillis() - time > 50) {
+                if(System.currentTimeMillis() - time > 100) {
                     time = System.currentTimeMillis();
                     network.sendPacket(new CPlayerPosition(Camera.pos.x,Camera.pos.y,Camera.pos.z));
                 }
@@ -170,8 +183,8 @@ public class Main {
         }
     }
 
-    static int width = 1920 * 16;
-    static int height = 1080 * 16;
+    static int width = 1920 * 32;
+    static int height = 1080 * 32;
 
     static int renderDistance = 8;
     static int buffer = -1;

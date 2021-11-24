@@ -4,12 +4,8 @@ import dev.Hilligans.ourcraft.Item.ItemStack;
 import dev.Hilligans.ourcraft.Network.PacketBase;
 import dev.Hilligans.ourcraft.Network.PacketData;
 
-import java.util.Arrays;
+public class SWindowItems756 extends PacketBase {
 
-public class SWindowItems extends PacketBase {
-
-
-    //window id of 0 for normal inventory
     public short windowID;
     public short itemCount;
     public ItemStack[] slots;
@@ -22,15 +18,16 @@ public class SWindowItems extends PacketBase {
     @Override
     public void decode(PacketData packetData) {
         windowID = packetData.readUnsignedByte();
-        itemCount = packetData.readShort();
-        slots = new ItemStack[itemCount];
+        int stateID = packetData.readVarInt();
+        int count = packetData.readVarInt();
         for(int x = 0; x < itemCount; x++) {
             slots[x] = packetData.readItemStack();
         }
-        System.out.println(Arrays.toString(slots));
+        ItemStack heldItem = packetData.readItemStack();
     }
 
     @Override
     public void handle() {
+
     }
 }

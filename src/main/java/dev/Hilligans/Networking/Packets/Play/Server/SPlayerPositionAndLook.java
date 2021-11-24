@@ -1,5 +1,8 @@
 package dev.Hilligans.Networking.Packets.Play.Server;
 
+import dev.Hilligans.Main;
+import dev.Hilligans.Networking.Packets.Play.Client.CTeleportConfirm;
+import dev.Hilligans.ourcraft.Client.Camera;
 import dev.Hilligans.ourcraft.Network.PacketBase;
 import dev.Hilligans.ourcraft.Network.PacketData;
 
@@ -31,6 +34,7 @@ public class SPlayerPositionAndLook extends PacketBase {
 
     @Override
     public void handle() {
-
+        Main.network.sendPacket(new CTeleportConfirm(teleportID));
+        Camera.pos.set(x,y,z);
     }
 }

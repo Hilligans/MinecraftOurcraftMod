@@ -2,7 +2,7 @@ package dev.Hilligans.Networking.Packets.Play.Server;
 
 import dev.Hilligans.ourcraft.Network.PacketBase;
 import dev.Hilligans.ourcraft.Network.PacketData;
-import dev.Hilligans.ourcraft.Tag.CompoundTag;
+import dev.Hilligans.ourcraft.Tag.CompoundNBTTag;
 
 import java.util.Arrays;
 
@@ -14,8 +14,8 @@ public class SJoinGame extends PacketBase {
     public byte previousGamemode;
     public int worldCount;
     public String[] worlds;
-    public CompoundTag dimensionCodec;
-    public CompoundTag dimension;
+    public CompoundNBTTag dimensionCodec;
+    public CompoundNBTTag dimension;
     public String worldName;
     public long hashedSeed;
     public int maxPlayers;

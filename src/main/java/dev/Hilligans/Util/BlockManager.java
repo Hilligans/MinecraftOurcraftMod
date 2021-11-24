@@ -19,7 +19,7 @@ import java.util.HashMap;
 
 public class BlockManager {
 
-    public static Int2ObjectOpenHashMap<Block> blocks = new Int2ObjectOpenHashMap<Block>();
+    public static Int2ObjectOpenHashMap<Block> blocks = new Int2ObjectOpenHashMap<>();
     public static Int2IntOpenHashMap blockStates = new Int2IntOpenHashMap();
     public static HashMap<String, BlockShape> blockShapes = new HashMap<>();
     public static HashMap<String, Boolean> transparentBlocks = new HashMap<>();

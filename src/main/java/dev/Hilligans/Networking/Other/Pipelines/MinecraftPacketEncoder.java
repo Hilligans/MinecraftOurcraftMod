@@ -1,5 +1,6 @@
 package dev.Hilligans.Networking.Other.Pipelines;
 
+import dev.Hilligans.Main;
 import dev.Hilligans.ourcraft.Network.PacketData;
 import dev.Hilligans.ourcraft.Network.PacketEncoder;
 import io.netty.buffer.ByteBuf;
